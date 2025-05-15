@@ -15,6 +15,16 @@ This project is a public, open-source initiative to document and compare the evi
 - All tables are fully referenced, with direct links to official trial coverage, news galleries, and key documents.
 - The site is non-partisan and does not advocate for any party or outcome.
 
+## Ultimate Goal: Bayesian Analysis & Prediction
+
+A long-term objective for this project is to incorporate a Bayesian analysis framework, enabling the site to serve as a foundation for probabilistic modeling and prediction of jury decisions. By assigning likelihoods to various facts, arguments, and evidence, and updating these as new information emerges, we aim to build an interactive tool that can:
+
+- Model how jurors might weigh competing narratives and evidence
+- Allow users to explore how changes in evidence or argument strength could shift predicted outcomes
+- Provide a transparent, data-driven approach to understanding legal decision-making in complex trials
+
+This feature would make the project not only a reference for what happened in the Karen Read trials, but also a living demonstration of how Bayesian reasoning can be applied to real-world legal cases.
+
 ## Collaboration
 
 This is a collaborative, open-source project. Contributions are welcome—whether you have updated information, corrections, official exhibit lists, or suggestions for improvement. Please open an issue or submit a pull request on GitHub.
