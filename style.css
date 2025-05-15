@@ -29,8 +29,9 @@ th,td{border:none;padding:1.1rem 0.9rem;vertical-align:top;}
 th:first-child, td:first-child{min-width:3.2em;width:3.2em;text-align:center;}
 td{border-bottom:1px solid #e5e8ef;}
 th{background:#f8fafc;color:#23272f;font-weight:600;letter-spacing:0.03em;border-bottom:2px solid #e5e8ef;box-shadow:none;border-radius:0;}
-thead th:first-child{border-radius:0;}
-thead th:last-child{border-radius:0;}
+/* Curve the top of the table header */
+thead th:first-child{border-radius:16px 0 0 0;}
+thead th:last-child{border-radius:0 16px 0 0;}
 tbody tr:last-child td:first-child{border-radius:0 0 0 16px;}
 tbody tr:last-child td:last-child{border-radius:0 0 16px 0;}
 thead th{background:#f8fafc;text-align:left;box-shadow:none;border-radius:0;}
