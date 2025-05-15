@@ -1,30 +1,26 @@
 # Karen Read Trial Evidence Tracker
 
-A static site comparing evidence and arguments presented to the jury in the first Karen Read trial (2024) and the retrial (2025). Built for clarity, transparency, and accessibility.
+This project is a public, open-source initiative to document and compare the evidence and arguments presented to the jury in both the first Karen Read trial (2024) and the retrial (2025). The goal is to provide a clear, referenced, and accessible summary of what the jury saw, heard, and was asked to decide—empowering the public, press, and researchers to follow the case with transparency and context.
 
-## Features
+## Project Purpose
 
-- **Landing page** (`index.html`) links to:
-  - The original evidence table (ChatGPT-3.5/o3 summary)
-  - The updated, LLM-generated table (ChatGPT-4.1/Cascade LLM)
-- **LLM Table** (`llm_trial_fact_table.html`):
-  - Fully referenced with links to all public sources
-  - Mobile-friendly and responsive for all devices
-  - Prominent link to the [WCVB evidence gallery](https://www.wcvb.com/article/karen-read-murder-trial-see-read-evidence-shown-to-jurors-in-courtroom/60793160)
-  - Ready for future mapping to official trial exhibit numbers (add to the "Exhibit(s)" column as available)
-- **Style** (`style.css`):
-  - Optimized for readability, accessibility, and mobile use
+- **Transparency:** Present the facts, exhibits, and legal arguments as they were known to the jury, with references to original sources and media coverage.
+- **Comparison:** Allow side-by-side review of prosecution and defense narratives across both trials, highlighting how the evidence and arguments evolved.
+- **Accessibility:** Make complex trial information readable and navigable for all audiences, including those on mobile devices.
+- **Public Interest:** Support informed discussion and reporting by providing a single, well-organized resource with links to all major news and official sources.
 
-## Deploy on Cloudflare Pages
+## How It Works
 
-1. Push all HTML and CSS files to your Git repository.
-2. In Cloudflare → Pages, create a project and connect your repo.
-3. Build settings: Framework **None**, leave build command blank, output dir `./`.
-4. Deploy.
+- The main landing page features the most current, LLM-synthesized jury-known facts table (with references), plus links to the original evidence table and a comprehensive list of sources.
+- All tables are fully referenced, with direct links to official trial coverage, news galleries, and key documents.
+- The site is non-partisan and does not advocate for any party or outcome.
 
-## Contributing
+## Collaboration
 
-- If you have the official exhibit list or want to help map facts to exhibits, submit a pull request or open an issue.
-- For corrections, source suggestions, or feature requests, please open an issue.
+This is a collaborative, open-source project. Contributions are welcome—whether you have updated information, corrections, official exhibit lists, or suggestions for improvement. Please open an issue or submit a pull request on GitHub.
 
-_Last updated: 2025-05-14_
+---
+
+**Not affiliated with the court or any party. For educational and informational use only.**
+
+_Last updated: 2025-05-15_
