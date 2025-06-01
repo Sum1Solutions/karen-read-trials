@@ -90,6 +90,20 @@ A future objective is to incorporate a Bayesian analysis framework, enabling the
 - Explore how changes in evidence strength could shift predicted outcomes
 - Provide transparent, data-driven analysis of legal decision-making
 
+---
+
+## Reference Link Audit Log (Dead/Outdated Links)
+
+This section tracks dead or outdated reference links that have been replaced or removed, to ensure ongoing transparency and historical traceability. Please update this list as new dead links are found and replaced.
+
+| Date Found | Original URL | Supported Fact/Topic | Replacement/Notes |
+|------------|-------------|----------------------|-------------------|
+| 2025-06-01 | https://www.wcvb.com/article/karen-read-trial-apple-health-data/43123456 | Apple Health data, digital evidence | Replaced with https://particle.news/story/karen-read-retrial-highlights-key-testimony-and-forensic-evidence |
+| 2025-06-01 | https://www.courttv.com/news/karen-read-trial-peggy-okeefe-testimony/ | Peggy O’Keefe testimony | Replaced with https://particle.news/story/karen-read-retrial-highlights-conflicting-testimonies-and-emotional-testimony-from-victims-mother |
+| 2025-06-01 | https://www.boston.com/news/local-news/2024/11/12/karen-read-bac-analysis/ | BAC analysis & forensic testimony | Replaced with https://rigth.news/karen-read-trial-star-witness-testimony-key-updates/ |
+| 2025-06-01 | https://nypost.com/2024/12/05/karen-read-trial-video-timestamp-error/ | Video timestamp error | Replaced with https://time.news/karen-read-trial-day-15-live-updates/ |
+| 2025-06-01 | https://www.masslive.com/news/2025/05/karen-read-trial-jealous-rage-calls.html | “Jealous rage” calls/voicemail evidence | No direct replacement found yet (search ongoing) |
+
 ## Technical Details
 
 **Built With:** HTML5, CSS3, Claude Code analysis
