@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.courttv.com)",
+      "WebFetch(domain:www.wcvb.com)",
+      "Bash(open index.html)"
+    ],
+    "deny": []
+  }
+}
