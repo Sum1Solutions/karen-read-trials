@@ -1,10 +1,10 @@
 # Karen Read Trial Evidence Tracker
 
-This project is a comprehensive, open-source initiative to document and compare the evidence and arguments presented to the jury in both the first Karen Read trial (2024) and the retrial (2025). Updated through June 1, 2025, compiled by Claude Code with the latest trial developments and synthesizes all facts known to the jury in both trials.
+This project is a comprehensive, open-source initiative to document and compare the evidence and arguments presented to the jury in both the first Karen Read trial (2024) and the retrial (2025). Updated through June 8, 2025, compiled by Claude Code with the latest trial developments and synthesizes all facts known to the jury in both trials.
 
 ## Project Status (June 2025)
 
-**Current Trial Status:** The retrial prosecution rested their case on May 30, 2025, after calling 38 witnesses over 23 days of testimony. The defense began presenting their case with crash reconstruction expert Matthew DiSogra.
+**Current Trial Status:** The retrial prosecution rested their case on May 30, 2025, after calling 38 witnesses over 23 days of testimony. The defense is now presenting its case, with testimony ongoing as of June 8, 2025.
 
 **Site Features:**
 - **Evidence Comparison Table:** 15 key facts comparing prosecution vs defense arguments across both trials
@@ -109,7 +109,7 @@ This section tracks dead or outdated reference links that have been replaced or 
 **Built With:** HTML5, CSS3, Claude Code analysis
 **Optimized For:** Mobile-first responsive design
 **Sources:** 25+ verified news outlets and court coverage
-**Updated:** June 1, 2025 (through prosecution case completion)
+**Updated:** June 8, 2025 (defense testimony ongoing; further details pending verification)
 
 ## Contributing
 
@@ -123,4 +123,4 @@ This is an open-source project. Contributions are welcome for:
 
 **Not affiliated with the court or any party. For educational and informational use only.**
 
-_Last updated: June 1, 2025 - Prosecution case complete, defense case beginning_
+_Last updated: June 8, 2025 - Defense testimony ongoing_
