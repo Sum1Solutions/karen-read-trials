@@ -1,15 +1,20 @@
 # Karen Read Trial Evidence Tracker
 
-This project is a comprehensive, open-source initiative to document and compare the evidence and arguments presented to the jury in both the first Karen Read trial (2024) and the retrial (2025). Updated through June 1, 2025, compiled by Claude Code with the latest trial developments and synthesizes all facts known to the jury in both trials.
+This project is a comprehensive, open-source initiative to document and compare the evidence and arguments presented to the jury in both the first Karen Read trial (2024) and the retrial (2025). Updated through June 16, 2025, this project synthesizes all facts known to the jury in both trials.
 
-## Project Status (June 2025)
+## Project Status (June 2025 - Updated)
 
-**Current Trial Status:** The retrial prosecution rested their case on May 30, 2025, after calling 38 witnesses over 23 days of testimony. The defense began presenting their case with crash reconstruction expert Matthew DiSogra.
+**Current Trial Status:** Jury deliberations began on June 13, 2025, after 31 total trial days. The defense presented their case over 7 days, followed by closing arguments from both sides.
+
+**Key Developments:**
+- Defense presented crash reconstruction and forensic evidence challenging the prosecution's narrative
+- Both sides delivered closing arguments on June 12, 2025
+- Jury is currently deliberating on charges of second-degree murder, manslaughter, and leaving the scene
 
 **Site Features:**
-- **Evidence Comparison Table:** 15 key facts comparing prosecution vs defense arguments across both trials
-- **Daily Trial Timeline:** Comprehensive day-by-day breakdown of all 25 trial days (April 22 - May 30, 2025)
-- **Updated References:** 25+ verified sources from major news outlets and court coverage
+- **Evidence Comparison Table:** 19 key facts comparing prosecution vs defense arguments across both trials
+- **Daily Trial Timeline:** Comprehensive day-by-day breakdown of all 31 trial days (April 22 - June 13, 2025)
+- **Updated References:** 30+ verified sources from major news outlets and court coverage
 
 ## What We Built
 
@@ -41,6 +46,7 @@ This project is a comprehensive, open-source initiative to document and compare 
 - **Responsive Tables:** Custom CSS for readable tables across all device sizes
 - **Cross-Linking:** Internal navigation between evidence table and daily timeline
 - **Accessibility:** Proper semantic HTML and mobile-responsive design
+- **AI-Assisted Analysis:** This project utilizes AI language models (Claude and ChatGPT) to help synthesize and organize complex trial information while maintaining strict adherence to factual reporting
 
 ### **Content Organization**
 - **Evidence Synthesis:** Combined information from 38 witnesses and 23 days of testimony
@@ -106,10 +112,11 @@ This section tracks dead or outdated reference links that have been replaced or 
 
 ## Technical Details
 
-**Built With:** HTML5, CSS3, Claude Code analysis
+**Built With:** HTML5, CSS3, AI-assisted analysis
+**AI Assistants:** Claude and ChatGPT for content synthesis and organization
 **Optimized For:** Mobile-first responsive design
-**Sources:** 25+ verified news outlets and court coverage
-**Updated:** June 1, 2025 (through prosecution case completion)
+**Sources:** 30+ verified news outlets and court coverage
+**Updated:** June 16, 2025 (through start of jury deliberations)
 
 ## Contributing
 
@@ -123,4 +130,15 @@ This is an open-source project. Contributions are welcome for:
 
 **Not affiliated with the court or any party. For educational and informational use only.**
 
-_Last updated: June 1, 2025 - Prosecution case complete, defense case beginning_
+_Last updated: June 16, 2025 - Jury deliberations ongoing_
+
+---
+
+## AI Assistance Disclosure
+
+This project utilizes AI language models (Claude and ChatGPT) to assist with:
+- Synthesizing and organizing complex trial information
+- Maintaining consistent formatting and cross-referencing
+- Ensuring comprehensive coverage of trial developments
+
+All content is carefully reviewed for accuracy and neutrality. The AI's role is to assist with organization and presentation, not to generate or interpret facts. All information is directly sourced from publicly available trial coverage and documentation.
