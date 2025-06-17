@@ -17,13 +17,8 @@ table{width:100%;border-collapse:separate;border-spacing:0;font-size:clamp(0.95r
   table{font-size:1em;}
 }
 
-.llm-link, a{color:#3867d6;text-decoration:none;font-weight:600;transition:all 0.17s;border-radius:5px;padding:0.18em 0.7em;background:linear-gradient(90deg,#e3eefe 0%,#f6f8fc 100%);box-shadow:0 1px 3px rgba(80,120,200,0.04);display:inline-block;}
+.llm-link, a{color:#2c5aa8;text-decoration:none;font-weight:600;transition:all 0.17s;border-radius:5px;padding:0.18em 0.7em;background:linear-gradient(90deg,#e3eefe 0%,#f6f8fc 100%);box-shadow:0 1px 3px rgba(80,120,200,0.04);display:inline-block;}
 .llm-link:hover, a:hover,.llm-link:focus, a:focus{color:#fff;background:linear-gradient(90deg,#4e73df 0%,#6dd5ed 100%);outline:none;text-decoration:none;box-shadow:0 2px 8px rgba(80,120,200,0.15);}
-@media (max-width: 600px){
-  body, main, header, footer{padding-left:0.2em;padding-right:0.2em;}
-  h1, h2{font-size:1.2em;}
-  table{font-size:1em;}
-}
 
 th,td{border:none;padding:1.1rem 0.9rem;vertical-align:top;}
 th:first-child, td:first-child{min-width:3.2em;width:3.2em;text-align:center;}
