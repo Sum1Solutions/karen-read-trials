@@ -90,22 +90,50 @@ This project maintains a juror's perspective by focusing exclusively on evidence
 - **Defense Case:** Began May 30, 2025 with crash expert DiSogra
 - **Key Witnesses:** Jennifer McCabe (3 days), Dr. Judson Welcher, Shanon Burgess
 
-## How to View Locally
+## Getting Started
 
-1.  Clone this repository or download the files.
-2.  Navigate to the project directory in your terminal:
-    ```bash
-    cd path/to/reedcase
-    ```
-3.  Since this is a static site (HTML, CSS, JS only), you can open the `index.html` file directly in your web browser.
-4.  For a more robust local experience that mimics a web server (especially if there are features that behave differently with `file:///` URLs), you can use Python's built-in HTTP server (or any other simple HTTP server):
-    ```bash
-    # For Python 3
-    python3 -m http.server
-    # For Python 2 (if Python 3 is not available)
-    # python -m SimpleHTTPServer
-    ```
-    Then, open your browser and go to `http://localhost:8000` (or the port number shown in your terminal).
+### Local Development
+
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Sum1Solutions/karen-read-trials.git
+   cd karen-read-trials
+   ```
+
+2. Open the site in your browser:
+   - Simply open `index.html` in any modern web browser
+   - Or use a local server (e.g., `python3 -m http.server 8000`)
+
+### For Contributors
+
+We welcome contributions to enhance this project! Here's how you can help:
+
+1. **Fork** the repository
+2. Create a new branch for your feature/fix
+3. Make your changes
+4. Submit a pull request
+
+Areas where we'd love contributions:
+- Improving the Bayesian analysis model
+- Adding new evidence or analysis
+- Enhancing the UI/UX
+- Fixing bugs or inaccuracies
+
+### Customizing Your Analysis
+
+This project allows you to adjust your own opinions and see how they affect the Bayesian probability calculations. The interactive Bayesian Analyzer lets you:
+
+- Adjust the weight you give to each piece of evidence
+- See how different interpretations affect the overall probability
+- Save your custom analysis (coming soon)
+
+To modify the analysis:
+1. Open `index.html` in your browser
+2. Navigate to the Bayesian Analyzer section
+3. Use the sliders to adjust your confidence in each piece of evidence
+4. Observe how the final probability changes based on your inputs
+
+Your analysis is private and runs entirely in your browser - no data is sent to any server.
 
 ## Deployment
 
