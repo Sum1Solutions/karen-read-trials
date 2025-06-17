@@ -1,5 +1,7 @@
 # Karen Read Trial Evidence Tracker
 
+# Karen Read Trial Evidence Tracker
+
 This project is a comprehensive, open-source initiative to document and compare the evidence and arguments presented to the jury in both the first Karen Read trial (2024) and the retrial (2025). Updated through June 16, 2025, this project synthesizes all facts known to the jury in both trials.
 
 ## Project Status (June 2025 - Updated)
@@ -153,8 +155,13 @@ This section tracks dead or outdated reference links that have been replaced or 
 **Built With:** HTML5, CSS3, AI-assisted analysis
 **AI Assistants:** Claude and ChatGPT for content synthesis and organization
 **Optimized For:** Mobile-first responsive design
+<<<<<<< HEAD
 **Sources:** 30+ verified news outlets and court coverage
 **Updated:** June 16, 2025 (through start of jury deliberations)
+=======
+**Sources:** 25+ verified news outlets and court coverage
+**Updated:** June 9, 2025 (defense testimony ongoing; further details pending verification; network access limited)
+>>>>>>> origin/codex/update-website
 
 ## Contributing
 
@@ -168,6 +175,7 @@ This is an open-source project. Contributions are welcome for:
 
 **Not affiliated with the court or any party. For educational and informational use only.**
 
+<<<<<<< HEAD
 _Last updated: June 16, 2025 - Jury deliberations ongoing_
 
 ---
@@ -180,3 +188,6 @@ This project utilizes AI language models (Claude and ChatGPT) to assist with:
 - Ensuring comprehensive coverage of trial developments
 
 All content is carefully reviewed for accuracy and neutrality. The AI's role is to assist with organization and presentation, not to generate or interpret facts. All information is directly sourced from publicly available trial coverage and documentation.
+=======
+_Last updated: June 9, 2025 - Defense testimony ongoing_
+>>>>>>> origin/codex/update-website
