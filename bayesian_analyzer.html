@@ -98,8 +98,8 @@
 
     <section class="form-box">
       <h3>Step 1. Your Starting Belief (Prior Probability)</h3>
-      <p>Before considering any specific evidence from this trial, how strongly do you believe H1 is true based on your general knowledge or initial impressions? (0% = H1 is impossible, 50% = H1 and H2 are equally likely, 100% = H1 is certain).</p>
-      <p style="font-size:0.9em; color:#555;"><em>This 'prior' can reflect your initial reaction when you first heard of the event, your current belief after general media exposure, or a neutral 50/50 stance to see the evidence's impact from a baseline. The key is to choose a starting point that makes sense for your own exploration.</em></p>
+      <p>Before looking at the specific facts, decide how much you think Hypothesis&nbsp;1 is correct. H1 is the claim that Karen Read caused John O&rsquo;Keefe&rsquo;s death. A setting of 0% means you think that claim is impossible, 50% means you view H1 and H2 as equally plausible, and 100% means you are certain H1 is true.</p>
+      <p style="font-size:0.9em; color:#555;"><em>You might base this on your initial reaction when first hearing about the case, your impression after following media coverage, or you can start from a neutral 50/50 stance to see how the evidence shifts your belief. Whatever value you choose for H1, your belief in H2 is simply 100% minus that amount.</em></p>
       <div class="prior-slider-group">
         <label for="prior-h1">Initial Prior P(H1):</label>
         <input type="range" id="prior-h1" name="prior-h1" min="0" max="100" value="50" oninput="updatePriorAndRecalculate(this.value)">
@@ -110,8 +110,8 @@
 
     <section class="form-box">
       <h3>Step 2. Rate the Strength of Each Piece of Evidence (Likelihoods)</h3>
-      <p>For each piece of evidence below, estimate how likely you think that evidence would be if H1 were true, and if H2 were true. Use a scale from 0% (impossible) to 100% (certain).</p>
-      <p><em>As you review each fact below, the 'Updated P(H1) after this fact' will show how your belief in H1 (Karen Read's responsibility) changes based on that single piece of evidence, given your beliefs up to that point. The final posterior at the bottom reflects all evidence combined.</em></p>
+      <p>For every fact below, imagine each hypothesis in turn. First picture H1: if Karen Read really caused the death, how likely would this fact appear? Then picture H2: if she did not cause it &mdash; perhaps it was an accident or someone else was involved &mdash; how likely would the same fact be? Use the sliders from 0% (impossible) to 100% (certain) to express those two probabilities.</p>
+      <p><em>These likelihoods help show how consistent the evidence is with each scenario. Many facts may be expected under both hypotheses, while others might fit one much better than the other. As you adjust the sliders, the "Updated P(H1) after this fact" line reveals how that single piece of evidence shifts your belief. The final posterior at the bottom combines them all.</em></p>
 
       <div id="likelihoods-section">
         <div class="evidence-item" id="evidence-item-1">
