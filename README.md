@@ -1,10 +1,18 @@
-# Karen Read Trial Evidence Tracker
+# The Right Side of Wrong: Bayes' Theorem in Action
+## The Karen Read Case
 
-# Karen Read Trial Evidence Tracker
+This project is a comprehensive, open-source initiative to document and analyze the evidence and arguments presented to the jury in both the first Karen Read trial (2024) and the retrial (2025) through the lens of Bayesian reasoning. Updated through June 17, 2025, this project synthesizes all facts known to the jury in both trials.
 
-This project is a comprehensive, open-source initiative to document and compare the evidence and arguments presented to the jury in both the first Karen Read trial (2024) and the retrial (2025). Updated through June 16, 2025, this project synthesizes all facts known to the jury in both trials.
+## Analysis Approach
 
-## Project Status (June 2025 - Updated)
+This project maintains a juror's perspective by focusing exclusively on evidence and testimony formally presented in court. Key aspects of our approach:
+
+- **Evidence-Based Analysis**: All evaluations are grounded in testimony and exhibits admitted during trial
+- **Trial-Specific Context**: Notes differences in evidence presentation between the first trial and retrial
+- **Neutral Stance**: Presents competing interpretations without editorializing
+- **Transparent Sourcing**: All facts are linked to trial testimony or official court documents
+
+## Current Status (June 2025)
 
 **Current Trial Status:** Jury deliberations began on June 13, 2025, after 31 total trial days. The prosecution presented its case over 23 days (38 witnesses), and the defense presented its case over 8 days (11 witnesses).
 
@@ -24,7 +32,7 @@ This project is a comprehensive, open-source initiative to document and compare 
   - Collapsible explanations of Bayesian logic and mathematics
 - **Updated References:** 14+ key reference pages from major news outlets and court coverage (see Links & References page).
 
-## What We Built
+## Project Features
 
 ### 1. **Comprehensive Evidence Analysis**
 - **Main Evidence Table:** Side-by-side comparison of how each key fact was presented by prosecution and defense in both the 2024 trial and 2025 retrial
@@ -71,7 +79,7 @@ This project is a comprehensive, open-source initiative to document and compare 
 ## Key Retrial Developments Documented
 
 ### **Major Changes from First Trial:**
-- **Michael Proctor Absent:** Lead investigator fired between trials for misconduct
+- **Key Difference in Retrial:** Michael Proctor did not testify in person; his prior testimony was read into the record
 - **Enhanced Expert Testimony:** New crash reconstruction and digital forensics analysis
 - **Expanded Defense Case:** "More robust" defense strategy with additional witnesses
 - **New Evidence:** Rice-sized plastic debris, SUV scuff mark analysis, timeline discrepancies
