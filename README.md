@@ -1,11 +1,11 @@
 # The Right Side of Wrong: Bayes' Theorem in Action
 ## The Karen Read Case
 
-This project is a comprehensive, open-source initiative to document and analyze the evidence and arguments presented to the jury in both the first Karen Read trial (2024) and the retrial (2025) through the lens of Bayesian reasoning. Updated through June 17, 2025, this project synthesizes all facts known to the jury in both trials.
+This project is an open-source initiative to document and analyze the evidence and arguments presented to the jury in both the first Karen Read trial (2024) and the retrial (2025) through the lens of Bayesian reasoning.
 
 ## Analysis Approach
 
-This project maintains a juror's perspective by focusing exclusively on evidence and testimony formally presented in court. Key aspects of our approach:
+This project maintains a juror's perspective by focusing on evidence and testimony formally presented in court. Key aspects of our approach:
 
 - **Evidence-Based Analysis**: All evaluations are grounded in testimony and exhibits admitted during trial
 - **Trial-Specific Context**: Notes differences in evidence presentation between the first trial and retrial
@@ -30,32 +30,32 @@ This project maintains a juror's perspective by focusing exclusively on evidence
   - Clear probability indicators (P(Evidence | H1) and P(Evidence | H2))
   - Visual representation of how each fact affects the overall probability
   - Collapsible explanations of Bayesian logic and mathematics
-- **Updated References:** 14+ key reference pages from major news outlets and court coverage (see Links & References page).
+- **Updated References:** 30+ key reference pages from major news outlets and court coverage (see Links & References page).
 
 ## Project Features
 
 ### 1. **Comprehensive Evidence Analysis**
 - **Main Evidence Table:** Side-by-side comparison of how each key fact was presented by prosecution and defense in both the 2024 trial and 2025 retrial
-- **19 Key Evidence Items:** From the discovery of John O'Keefe's body to the latest expert testimony
+- **19 Key Evidence Items:** From the discovery of John O'Keefe's body to the final expert testimony
 - **Cross-Referenced:** Each evidence item linked to original sources and news coverage
 
-### 2. **Daily Trial Timeline (New Feature)**
+### 2. **Daily Trial Timeline**
 - **Complete Day-by-Day Coverage:** Every trial day from opening statements to prosecution rest
 - **Witness Details:** Who testified, what they said, and key points from each day
 - **Prosecution vs Defense:** Daily breakdown of competing arguments and strategies
 - **Evidence Correlation:** Each day linked to relevant facts in the main evidence table
 
 ### 3. **Enhanced Source Documentation**
-- **14+ Key Reference Pages:** Curated links to Court TV, CNN, Boston Globe, WCVB, Fox News, and other major outlets (see Links & References page for full list)
+- **30+ Key Reference Pages:** Curated links to Court TV, CNN, Boston Globe, WCVB, Fox News, and other major outlets (see Links & References page for full list)
 - **Retrial-Specific Coverage:** Sources covering unique developments in the 2025 retrial
 - **Timeline Tracking:** Key dates, witness counts, and trial phases documented
 
 ## How We Built It
 
 ### **Research & Data Collection**
+- **AI-Assisted Analysis:** This project utilizes AI language models to synthesize and organize information while maintaining strict adherence to factual reporting
 - **Web Search & Analysis:** Comprehensive search of major news outlets for daily trial coverage
 - **Source Verification:** Cross-referenced multiple sources for accuracy
-- **Real-Time Updates:** Information current through prosecution case completion (May 30, 2025)
 
 ### **Technical Implementation**
 - **Static HTML Site:** Clean, fast-loading pages optimized for mobile and desktop
@@ -135,26 +135,6 @@ To modify the analysis:
 
 Your analysis is private and runs entirely in your browser - no data is sent to any server.
 
-## Deployment
-
-This site is built with static HTML, CSS, and JavaScript, making it easy to deploy on various platforms. Here's how to deploy it using GitHub Pages, a free hosting service provided by GitHub:
-
-1.  **Ensure your project is a GitHub repository.** If you cloned it or created it on GitHub, you're all set.
-2.  **Push your latest changes** to the main branch (or whichever branch you want to deploy).
-    ```bash
-    git push origin main
-    ```
-3.  **Enable GitHub Pages in your repository settings:**
-    *   Go to your repository on GitHub.com.
-    *   Click on the "Settings" tab.
-    *   In the left sidebar, scroll down to the "Code and automation" section and click on "Pages".
-    *   Under "Build and deployment", for "Source", select "Deploy from a branch".
-    *   Under "Branch", select your `main` branch (or the branch with your site files) and the `/ (root)` folder, then click "Save".
-4.  **Access your site:** GitHub Pages will build and deploy your site. After a minute or two, your site will be available at `https://<your-username>.github.io/<your-repository-name>/`.
-    *   The URL will also be displayed in the GitHub Pages settings once the site is live.
-
-**Note:** If your HTML files are not in the root of the repository (e.g., they are in a `docs` folder), you would select that folder in step 3.
-
 ## Site Architecture
 
 ```
@@ -163,19 +143,6 @@ This site is built with static HTML, CSS, and JavaScript, making it easy to depl
 ├── style.css           # Responsive styling for all tables
 └── README.md           # This documentation
 ```
-
-## Future Goals
-
-### **Ongoing Updates**
-- Defense case completion and verdict coverage
-- Additional expert witness testimony analysis
-- Final jury deliberation and outcome documentation
-
-### **Long-term Vision: Bayesian Analysis**
-A future objective is to incorporate a Bayesian analysis framework, enabling the site to serve as a foundation for probabilistic modeling and prediction of jury decisions. This would allow users to:
-- Model how jurors might weigh competing narratives and evidence
-- Explore how changes in evidence strength could shift predicted outcomes
-- Provide transparent, data-driven analysis of legal decision-making
 
 ---
 
@@ -196,13 +163,8 @@ This section tracks dead or outdated reference links that have been replaced or 
 **Built With:** HTML5, CSS3, AI-assisted analysis
 **AI Assistants:** Claude and ChatGPT for content synthesis and organization
 **Optimized For:** Mobile-first responsive design
-<<<<<<< HEAD
 **Sources:** 30+ verified news outlets and court coverage
-**Updated:** June 16, 2025 (through start of jury deliberations)
-=======
-**Sources:** 25+ verified news outlets and court coverage
-**Updated:** June 9, 2025 (defense testimony ongoing; further details pending verification; network access limited)
->>>>>>> origin/codex/update-website
+**Updated:** June 17, 2025 (through start of jury deliberations)
 
 ## Contributing
 
@@ -212,23 +174,14 @@ This is an open-source project. Contributions are welcome for:
 - Technical improvements to the site structure
 - Corrections or clarifications to existing content
 
----
-
-**Not affiliated with the court or any party. For educational and informational use only.**
-
-<<<<<<< HEAD
-_Last updated: June 16, 2025 - Jury deliberations ongoing_
-
----
 
 ## AI Assistance Disclosure
 
-This project utilizes AI language models (Claude and ChatGPT) to assist with:
+This project utilizes AI language models, including OpenAI's ChatGPT, Anthropic's Claude, X.com's Grok, Windsurf IDE, and other AI tools to assist with:
 - Synthesizing and organizing complex trial information
 - Maintaining consistent formatting and cross-referencing
 - Ensuring comprehensive coverage of trial developments
+- Generating and organizing content for the README.md file
+- Generating and organizing content for the bayesian analyzer.
 
-All content is carefully reviewed for accuracy and neutrality. The AI's role is to assist with organization and presentation, not to generate or interpret facts. All information is directly sourced from publicly available trial coverage and documentation.
-=======
-_Last updated: June 9, 2025 - Defense testimony ongoing_
->>>>>>> origin/codex/update-website
+This project is not affiliated with the court or any party. For educational and informational use only. This information may be incomplete or incorrect. It is not intended to be used as a substitute for anything other than thinking deeply about how perspective affects our understanding of events (Perspective = Reality. See https://www.youtube.com/@sum1namedjon for more information)
