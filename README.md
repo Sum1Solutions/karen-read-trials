@@ -4,7 +4,7 @@ This project is a comprehensive, open-source initiative to document and compare 
 
 ## Project Status (June 2025 - Updated)
 
-**Current Trial Status:** Jury deliberations began on June 13, 2025, after 31 total trial days. The defense presented their case over 7 days, followed by closing arguments from both sides.
+**Current Trial Status:** Jury deliberations began on June 13, 2025, after 31 total trial days. The prosecution presented its case over 23 days (38 witnesses), and the defense presented its case over 8 days (11 witnesses).
 
 **Key Developments:**
 - Defense presented crash reconstruction and forensic evidence challenging the prosecution's narrative
@@ -12,15 +12,16 @@ This project is a comprehensive, open-source initiative to document and compare 
 - Jury is currently deliberating on charges of second-degree murder, manslaughter, and leaving the scene
 
 **Site Features:**
-- **Evidence Comparison Table:** 19 key facts comparing prosecution vs defense arguments across both trials
-- **Daily Trial Timeline:** Comprehensive day-by-day breakdown of all 31 trial days (April 22 - June 13, 2025)
-- **Updated References:** 30+ verified sources from major news outlets and court coverage
+- **Evidence Comparison Table:** 19 key facts comparing prosecution vs defense arguments across both trials.
+- **Daily Trial Timeline:** Comprehensive day-by-day breakdown of all 31 trial days (April 22 - June 13, 2025).
+- **Bayesian Analyzer:** An interactive tool to explore how evidence impacts belief, featuring a narrative-driven introduction and a detailed, collapsible explanation of Bayesian logic and mathematics.
+- **Updated References:** 14+ key reference pages from major news outlets and court coverage (see Links & References page).
 
 ## What We Built
 
 ### 1. **Comprehensive Evidence Analysis**
 - **Main Evidence Table:** Side-by-side comparison of how each key fact was presented by prosecution and defense in both the 2024 trial and 2025 retrial
-- **15 Key Evidence Items:** From the discovery of John O'Keefe's body to the latest expert testimony
+- **19 Key Evidence Items:** From the discovery of John O'Keefe's body to the latest expert testimony
 - **Cross-Referenced:** Each evidence item linked to original sources and news coverage
 
 ### 2. **Daily Trial Timeline (New Feature)**
@@ -30,7 +31,7 @@ This project is a comprehensive, open-source initiative to document and compare 
 - **Evidence Correlation:** Each day linked to relevant facts in the main evidence table
 
 ### 3. **Enhanced Source Documentation**
-- **25+ References:** Verified links to Court TV, CNN, Boston Globe, WCVB, Fox News, and other major outlets
+- **14+ Key Reference Pages:** Curated links to Court TV, CNN, Boston Globe, WCVB, Fox News, and other major outlets (see Links & References page for full list)
 - **Retrial-Specific Coverage:** Sources covering unique developments in the 2025 retrial
 - **Timeline Tracking:** Key dates, witness counts, and trial phases documented
 
@@ -73,6 +74,43 @@ This project is a comprehensive, open-source initiative to document and compare 
 - **Prosecution Case:** April 22 - May 30, 2025 (38 witnesses, 23 days)
 - **Defense Case:** Began May 30, 2025 with crash expert DiSogra
 - **Key Witnesses:** Jennifer McCabe (3 days), Dr. Judson Welcher, Shanon Burgess
+
+## How to View Locally
+
+1.  Clone this repository or download the files.
+2.  Navigate to the project directory in your terminal:
+    ```bash
+    cd path/to/reedcase
+    ```
+3.  Since this is a static site (HTML, CSS, JS only), you can open the `index.html` file directly in your web browser.
+4.  For a more robust local experience that mimics a web server (especially if there are features that behave differently with `file:///` URLs), you can use Python's built-in HTTP server (or any other simple HTTP server):
+    ```bash
+    # For Python 3
+    python3 -m http.server
+    # For Python 2 (if Python 3 is not available)
+    # python -m SimpleHTTPServer
+    ```
+    Then, open your browser and go to `http://localhost:8000` (or the port number shown in your terminal).
+
+## Deployment
+
+This site is built with static HTML, CSS, and JavaScript, making it easy to deploy on various platforms. Here's how to deploy it using GitHub Pages, a free hosting service provided by GitHub:
+
+1.  **Ensure your project is a GitHub repository.** If you cloned it or created it on GitHub, you're all set.
+2.  **Push your latest changes** to the main branch (or whichever branch you want to deploy).
+    ```bash
+    git push origin main
+    ```
+3.  **Enable GitHub Pages in your repository settings:**
+    *   Go to your repository on GitHub.com.
+    *   Click on the "Settings" tab.
+    *   In the left sidebar, scroll down to the "Code and automation" section and click on "Pages".
+    *   Under "Build and deployment", for "Source", select "Deploy from a branch".
+    *   Under "Branch", select your `main` branch (or the branch with your site files) and the `/ (root)` folder, then click "Save".
+4.  **Access your site:** GitHub Pages will build and deploy your site. After a minute or two, your site will be available at `https://<your-username>.github.io/<your-repository-name>/`.
+    *   The URL will also be displayed in the GitHub Pages settings once the site is live.
+
+**Note:** If your HTML files are not in the root of the repository (e.g., they are in a `docs` folder), you would select that folder in step 3.
 
 ## Site Architecture
 

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bayesian Analyzer - Karen Read Trial</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js" integrity="sha512-CQBWl4fJNTNqw3UmQJBSCVL_3hWHHbgz1KSRmNBKGVdYcdeK4vLmgTRcUHrK21GoxYGFQcK9KxL2AY2R0iK41g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <style>
+    body { font-family: sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+    header { background-color: #333; color: white; padding: 1em; text-align: center; }
+    nav ul { list-style-type: none; padding: 0; text-align: center; }
+    nav ul li { display: inline; margin-right: 20px; }
+    nav ul li a { color: white; text-decoration: none; font-weight: bold; }
+    .container { max-width: 900px; margin: 20px auto; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    .form-box { border: 1px solid #ddd; padding: 20px; margin-bottom: 20px; border-radius: 5px; background-color: #f9f9f9; }
+    .evidence-item { margin-bottom: 15px; padding-bottom: 15px; /* border-bottom: 1px solid #eee; */ }
+    .evidence-item h4 { margin-top: 0; color: #555; }
+    .likelihood-slider-group, .prior-slider-group { display: flex; align-items: center; margin-bottom: 10px; }
+    .likelihood-slider-group label, .prior-slider-group label { margin-bottom: 0; margin-right: 10px; font-weight: bold; flex-shrink: 0; }
+    input[type="range"] { width: 60%; margin-right: 10px; flex-grow: 1; }
+    .slider-value-display { font-weight: bold; min-width: 40px; /* Ensures space for '100%' */ }
+    button { background-color: #5cb85c; color: white; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; margin-top:10px; }
+    button:hover { background-color: #4cae4c; }
+    #results-section { margin-top: 20px; padding: 15px; background-color: #e9f5e9; border: 1px solid #c3e6cb; border-radius: 4px; }
+    #results-section h4 { color: #155724; }
+    .updated-belief-display { margin-top: 5px; margin-bottom:10px; font-style: italic; color: #007bff; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Right Side of Wrong: Karen Read Trials</h1>
+    <h2 style="font-size:1.3em; color:#4e73df; margin:0.5em 0 1.5em 0; font-weight:500;">Bayesian Evidence Analyzer</h2>
+    <div class="nav-links">
+        <a href="index.html" class="llm-link" style="font-size:1.07em; margin-right:1em;">Home / Evidence Table</a>
+        <a href="links.html" class="llm-link" style="font-size:1.07em; margin-right:1em;">Links & References</a>
+        <a href="https://github.com/Sum1Solutions/karen-read-trials" class="llm-link">GitHub</a>
+    </div>
+  </header>
+  <main>
+    <section class="intro-box">
+      <p>Imagine you're a detective trying to solve a mystery. You start with some initial ideas, but as you find clues, your ideas change? Bayesian analysis is a math tool that helps us do exactly that – update our beliefs as we get new information (or 'evidence').</p>
+      <p>It's named after Thomas Bayes, who came up with the main idea in the 18th Century. We use it in science, medicine, and even in everyday thinking without realizing it!</p>
+
+      <h3>Our Big Questions (Hypotheses)</h3>
+      <p>In the Karen Read trial, we're looking at two main possibilities (these are our 'hypotheses'):</p>
+      <ul>
+        <li><strong>Hypothesis 1 (H1):</strong> Karen Read caused John O'Keefe's death in a way that makes her legally responsible (like the prosecution argues).</li>
+        <li><strong>Hypothesis 2 (H2):</strong> Karen Read did NOT cause John O'Keefe's death in such a way; his death might have been an accident not involving her, or caused by someone else (like the defense argues).</li>
+      </ul>
+
+      <h3>Your Starting Belief (Prior Probability)</h3>
+      <p>Before we look at any specific evidence from the trial, what's your gut feeling? This starting belief is called your 'prior probability.' For example, you might think it's 50/50, or you might lean one way or the other. This tool will let you set your starting point.</p>
+
+      <h3>How Strong is Each Clue? (Likelihoods)</h3>
+      <p>For every piece of evidence (each 'Fact' from the trial), we ask two questions:</p>
+      <ul>
+        <li>If H1 is true (Karen Read is responsible), how likely would we be to see this piece of evidence?</li>
+        <li>If H2 is true (Karen Read is NOT responsible), how likely would we be to see this piece of evidence?</li>
+      </ul>
+      <p>These are called 'likelihoods.' Some clues might strongly point to H1, others to H2, and some might not be very strong either way. You'll get to estimate these for each fact.</p>
+
+      <h3>Updating Your Beliefs</h3>
+      <p>Once you set your starting belief and estimate how strong each clue is, the Bayesian Analyzer will use math (Bayes' Theorem) to calculate a new 'updated belief' (called a 'posterior probability'). This shows how your belief might change after considering all the evidence you've rated.</p>
+
+      <details style="margin-top: 20px; background-color: #f8f9fa; border: 1px solid #dee2e6; padding: 15px; border-radius: 5px;">
+        <summary style="font-weight: bold; cursor: pointer; font-size: 1.1em;">The Logic & The Math (An In-Depth Look)</summary>
+        <div style="margin-top: 15px;">
+          <p>Thomas Bayes (c. 1701 – 17 April 1761) was an English statistician, philosopher, and Presbyterian minister who first formulated the theorem. You can learn more about him on his <a href="https://en.wikipedia.org/wiki/Thomas_Bayes" target="_blank" class="llm-link">Wikipedia page</a>.</p>
+          <h4>The Theorem Mathematically:</h4>
+          <div style="background-color: #fff; border: 1px solid #ccc; padding: 15px; border-radius: 5px; margin: 15px 0; font-size: 1.1em; text-align: center;">
+            <span style="font-weight: bold; color: #007bff;">P(H|E)</span> = <span style="display: inline-block; vertical-align: middle;"><div style="text-align: center; border-bottom: 1px solid black; padding: 0 5px;"><span style="font-weight: bold; color: #28a745;">P(E|H)</span> &times; <span style="font-weight: bold; color: #dc3545;">P(H)</span></div><div style="text-align: center; padding: 0 5px;"><span style="font-weight: bold; color: #ffc107;">P(E)</span></div></span>
+          </div>
+          <p>Let's break down what these terms mean in the context of our analyzer:</p>
+          <ul>
+            <li><span style="font-weight: bold; color: #007bff;">P(H|E)</span>: This is the <strong>Posterior Probability</strong>. It's what we want to find – the probability of our hypothesis (H) being true <em>after</em> considering the new evidence (E).</li>
+            <li><span style="font-weight: bold; color: #28a745;">P(E|H)</span>: This is the <strong>Likelihood</strong>. It's the probability of observing the evidence (E) if our hypothesis (H) were true. You set this with the sliders for each fact.</li>
+            <li><span style="font-weight: bold; color: #dc3545;">P(H)</span>: This is the <strong>Prior Probability</strong>. It's our initial belief in the hypothesis (H) being true <em>before</em> considering the new evidence (E). You set this with the 'Your Starting Belief' slider.</li>
+            <li><span style="font-weight: bold; color: #ffc107;">P(E)</span>: This is the <strong>Probability of the Evidence</strong>. It's the overall probability of observing the evidence (E) under all possible hypotheses. It's calculated in the background to ensure the final probability is correct.</li>
+          </ul>
+          <h4>The Logic: Why Does It Work?</h4>
+          <p>Bayes' Theorem provides a rational way to update beliefs. If evidence is more likely given your hypothesis is true, your belief in the hypothesis gets stronger. If the evidence is less likely, your belief gets weaker.</p>
+          <h4>Everyday Applications of Bayesian Reasoning:</h4>
+          <ul>
+            <li><strong>Medical Diagnosis:</strong> Doctors update the probability of a patient having a disease based on symptoms and test results.</li>
+            <li><strong>Spam Filters:</strong> Email services use Bayesian filtering to determine if an email is spam based on words and other features.</li>
+            <li><strong>Legal Reasoning (informally):</strong> Jurors and investigators constantly update their beliefs about guilt or innocence as new pieces of evidence are presented. This tool makes that process explicit.</li>
+          </ul>
+          <h4>Key Considerations, Assumptions, and Educational Purpose:</h4>
+          <ul>
+            <li><strong>Educational Focus:</strong> This tool's goal is to illustrate Bayesian reasoning, not to predict the trial's outcome.</li>
+            <li><strong>Subjectivity is Inherent:</strong> Your 'Prior' and 'Likelihood' estimates are personal judgments. The output directly reflects your inputs.</li>
+            <li><strong>Model Simplifications:</strong> The model assumes each piece of evidence is independent for simplicity. In reality, facts can be interconnected.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="form-box">
+      <h3>Step 1. Your Starting Belief (Prior Probability)</h3>
+      <p>Before considering any specific evidence from this trial, how strongly do you believe H1 is true based on your general knowledge or initial impressions? (0% = H1 is impossible, 50% = H1 and H2 are equally likely, 100% = H1 is certain).</p>
+      <p style="font-size:0.9em; color:#555;"><em>This 'prior' can reflect your initial reaction when you first heard of the event, your current belief after general media exposure, or a neutral 50/50 stance to see the evidence's impact from a baseline. The key is to choose a starting point that makes sense for your own exploration.</em></p>
+      <div class="prior-slider-group">
+        <label for="prior-h1">Initial Prior P(H1):</label>
+        <input type="range" id="prior-h1" name="prior-h1" min="0" max="100" value="50" oninput="updatePriorAndRecalculate(this.value)">
+        <span id="prior-h1-value" class="slider-value-display">50</span>%
+      </div>
+      <p>This means your starting belief in H2 (Karen Read is NOT responsible) is: <span id="prior-h2-value">50</span>%</p>
+    </section>
+
+    <section class="form-box">
+      <h3>Step 2. Rate the Strength of Each Piece of Evidence (Likelihoods)</h3>
+      <p>For each piece of evidence below, estimate how likely you think that evidence would be if H1 were true, and if H2 were true. Use a scale from 0% (impossible) to 100% (certain).</p>
+      <p><em>As you review each fact below, the 'Updated P(H1) after this fact' will show how your belief in H1 (Karen Read's responsibility) changes based on that single piece of evidence, given your beliefs up to that point. The final posterior at the bottom reflects all evidence combined.</em></p>
+
+      <div id="likelihoods-section">
+        <div class="evidence-item" id="evidence-item-1">
+          <h4>Fact 1: John O’Keefe found dead outside 34 Fairview Rd, ~6 a.m., Jan 29, 2022, during snowstorm</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact1-given-h1">P(Fact 1 | H1):</label>
+            <input type="range" id="fact1-given-h1" name="fact1-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact1-given-h1-value', this.value)">
+            <span id="fact1-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact1-given-h2">P(Fact 1 | H2):</label>
+            <input type="range" id="fact1-given-h2" name="fact1-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact1-given-h2-value', this.value)">
+            <span id="fact1-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact1-summary"></span>
+          </div>
+        </div>
+        <div class="evidence-item" id="evidence-item-2">
+          <h4>Fact 2: Blunt-force head injuries, hypothermia, abrasions on right arm</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact2-given-h1">P(Fact 2 | H1):</label>
+            <input type="range" id="fact2-given-h1" name="fact2-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact2-given-h1-value', this.value)">
+            <span id="fact2-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact2-given-h2">P(Fact 2 | H2):</label>
+            <input type="range" id="fact2-given-h2" name="fact2-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact2-given-h2-value', this.value)">
+            <span id="fact2-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact2-summary"></span>
+          </div>
+        </div>
+        <div class="evidence-item" id="evidence-item-3">
+          <h4>Fact 3: Broken Lexus taillight; matching plastic on lawn & clothes</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact3-given-h1">P(Fact 3 | H1):</label>
+            <input type="range" id="fact3-given-h1" name="fact3-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact3-given-h1-value', this.value)">
+            <span id="fact3-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact3-given-h2">P(Fact 3 | H2):</label>
+            <input type="range" id="fact3-given-h2" name="fact3-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact3-given-h2-value', this.value)">
+            <span id="fact3-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact3-summary"></span>
+          </div>
+        </div>
+        <div class="evidence-item" id="evidence-item-4">
+          <h4>Fact 4: Vehicle data: reverse shift & 24 mph spike at 12:45 a.m.</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact4-given-h1">P(Fact 4 | H1):</label>
+            <input type="range" id="fact4-given-h1" name="fact4-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact4-given-h1-value', this.value)">
+            <span id="fact4-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact4-given-h2">P(Fact 4 | H2):</label>
+            <input type="range" id="fact4-given-h2" name="fact4-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact4-given-h2-value', this.value)">
+            <span id="fact4-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact4-summary"></span>
+          </div>
+        </div>
+        <div class="evidence-item" id="evidence-item-5">
+          <h4>Fact 5: Witnesses (EMT, Jen McCabe) heard Read say “I hit him”</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact5-given-h1">P(Fact 5 | H1):</label>
+            <input type="range" id="fact5-given-h1" name="fact5-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact5-given-h1-value', this.value)">
+            <span id="fact5-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact5-given-h2">P(Fact 5 | H2):</label>
+            <input type="range" id="fact5-given-h2" name="fact5-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact5-given-h2-value', this.value)">
+            <span id="fact5-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact5-summary"></span>
+          </div>
+        </div>
+        <div class="evidence-item" id="evidence-item-6">
+          <h4>Fact 6: Google search “how long to die in cold”</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact6-given-h1">P(Fact 6 | H1):</label>
+            <input type="range" id="fact6-given-h1" name="fact6-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact6-given-h1-value', this.value)">
+            <span id="fact6-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact6-given-h2">P(Fact 6 | H2):</label>
+            <input type="range" id="fact6-given-h2" name="fact6-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact6-given-h2-value', this.value)">
+            <span id="fact6-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact6-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-7">
+          <h4>Fact 7: Apple Health/Waze data from victim’s phone</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact7-given-h1">P(Fact 7 | H1):</label>
+            <input type="range" id="fact7-given-h1" name="fact7-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact7-given-h1-value', this.value)">
+            <span id="fact7-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact7-given-h2">P(Fact 7 | H2):</label>
+            <input type="range" id="fact7-given-h2" name="fact7-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact7-given-h2-value', this.value)">
+            <span id="fact7-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact7-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-8">
+          <h4>Fact 8: Snow-plow driver saw no body on lawn</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact8-given-h1">P(Fact 8 | H1):</label>
+            <input type="range" id="fact8-given-h1" name="fact8-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact8-given-h1-value', this.value)">
+            <span id="fact8-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact8-given-h2">P(Fact 8 | H2):</label>
+            <input type="range" id="fact8-given-h2" name="fact8-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact8-given-h2-value', this.value)">
+            <span id="fact8-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact8-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-9">
+          <h4>Fact 9: Evidence collected with leaf-blower, Solo cups, grocery bags</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact9-given-h1">P(Fact 9 | H1):</label>
+            <input type="range" id="fact9-given-h1" name="fact9-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact9-given-h1-value', this.value)">
+            <span id="fact9-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact9-given-h2">P(Fact 9 | H2):</label>
+            <input type="range" id="fact9-given-h2" name="fact9-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact9-given-h2-value', this.value)">
+            <span id="fact9-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact9-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-10">
+          <h4>Fact 10: 52 unanswered calls & 8 angry voicemails left by Read</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact10-given-h1">P(Fact 10 | H1):</label>
+            <input type="range" id="fact10-given-h1" name="fact10-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact10-given-h1-value', this.value)">
+            <span id="fact10-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact10-given-h2">P(Fact 10 | H2):</label>
+            <input type="range" id="fact10-given-h2" name="fact10-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact10-given-h2-value', this.value)">
+            <span id="fact10-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact10-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-11">
+          <h4>Fact 11: Michael Proctor (lead investigator) fired between trials</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact11-given-h1">P(Fact 11 | H1):</label>
+            <input type="range" id="fact11-given-h1" name="fact11-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact11-given-h1-value', this.value)">
+            <span id="fact11-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact11-given-h2">P(Fact 11 | H2):</label>
+            <input type="range" id="fact11-given-h2" name="fact11-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact11-given-h2-value', this.value)">
+            <span id="fact11-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact11-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-12">
+          <h4>Fact 12: Rice-sized plastic debris found in O'Keefe's clothing</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact12-given-h1">P(Fact 12 | H1):</label>
+            <input type="range" id="fact12-given-h1" name="fact12-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact12-given-h1-value', this.value)">
+            <span id="fact12-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact12-given-h2">P(Fact 12 | H2):</label>
+            <input type="range" id="fact12-given-h2" name="fact12-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact12-given-h2-value', this.value)">
+            <span id="fact12-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact12-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-13">
+          <h4>Fact 13: SUV scuff mark matches O'Keefe's hip height</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact13-given-h1">P(Fact 13 | H1):</label>
+            <input type="range" id="fact13-given-h1" name="fact13-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact13-given-h1-value', this.value)">
+            <span id="fact13-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact13-given-h2">P(Fact 13 | H2):</label>
+            <input type="range" id="fact13-given-h2" name="fact13-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact13-given-h2-value', this.value)">
+            <span id="fact13-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact13-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-14">
+          <h4>Fact 14: Timeline discrepancy: 21-29 seconds between SUV and phone clocks</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact14-given-h1">P(Fact 14 | H1):</label>
+            <input type="range" id="fact14-given-h1" name="fact14-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact14-given-h1-value', this.value)">
+            <span id="fact14-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact14-given-h2">P(Fact 14 | H2):</label>
+            <input type="range" id="fact14-given-h2" name="fact14-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact14-given-h2-value', this.value)">
+            <span id="fact14-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact14-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-15">
+          <h4>Fact 15: Jennifer McCabe emerged as central witness (3 days testimony)</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact15-given-h1">P(Fact 15 | H1):</label>
+            <input type="range" id="fact15-given-h1" name="fact15-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact15-given-h1-value', this.value)">
+            <span id="fact15-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact15-given-h2">P(Fact 15 | H2):</label>
+            <input type="range" id="fact15-given-h2" name="fact15-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact15-given-h2-value', this.value)">
+            <span id="fact15-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact15-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-16">
+          <h4>Fact 16: Defense crash reconstruction expert testimony</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact16-given-h1">P(Fact 16 | H1):</label>
+            <input type="range" id="fact16-given-h1" name="fact16-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact16-given-h1-value', this.value)">
+            <span id="fact16-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact16-given-h2">P(Fact 16 | H2):</label>
+            <input type="range" id="fact16-given-h2" name="fact16-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact16-given-h2-value', this.value)">
+            <span id="fact16-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact16-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-17">
+          <h4>Fact 17: Taillight evidence re-examination</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact17-given-h1">P(Fact 17 | H1):</label>
+            <input type="range" id="fact17-given-h1" name="fact17-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact17-given-h1-value', this.value)">
+            <span id="fact17-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact17-given-h2">P(Fact 17 | H2):</label>
+            <input type="range" id="fact17-given-h2" name="fact17-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact17-given-h2-value', this.value)">
+            <span id="fact17-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact17-summary"></span>
+          </div>
+        </div>
+        <hr>
+        <div class="evidence-item" id="evidence-item-18">
+          <h4>Fact 18: Colin Albert's testimony and text messages</h4>
+          <div class="likelihood-slider-group">
+            <label for="fact18-given-h1">P(Fact 18 | H1):</label>
+            <input type="range" id="fact18-given-h1" name="fact18-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact18-given-h1-value', this.value)">
+            <span id="fact18-given-h1-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <div class="likelihood-slider-group">
+            <label for="fact18-given-h2">P(Fact 18 | H2):</label>
+            <input type="range" id="fact18-given-h2" name="fact18-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact18-given-h2-value', this.value)">
+            <span id="fact18-given-h2-value" class="slider-value-display">50</span>%
+          </div>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <div class="updated-belief-display">
+            <span id="fact18-summary"></span>
+          </div>
+        </div>
+
+        <!-- No <hr> after the last item -->
+      </div>
+    </section>
+
+    <section class="results-box">
+      <h3>Your Updated Belief (Posterior Probability)</h3>
+      <div id="results-section">
+        <h4>After considering the evidence:</h4>
+        <p>Updated Belief in H1 (Read is responsible): <strong id="posterior-h1-value">--</strong>%</p>
+        <p>Updated Belief in H2 (Read is NOT responsible): <strong id="posterior-h2-value">--</strong>%</p>
+
+        <!-- We can add a simple bar chart here later using JavaScript and CSS or a library -->
+        <div style="width: 80%; max-width: 500px; margin: 20px auto;">
+          <canvas id="posteriorChartCanvas"></canvas>
+        </div>
+
+        <div class="explanation-section" style="text-align: left; margin-top: 30px;">
+          <h4>The Logic: Why Does It Work?</h4>
+          <p>Bayes' Theorem provides a rational way to update beliefs. Here's the core idea:</p>
+          <ul>
+              <li><strong>Start with a belief:</strong> You have an initial idea about how likely something is (your prior probability, P(H)).</li>
+              <li><strong>Get new evidence:</strong> You encounter a new piece of information (E).</li>
+              <li><strong>Assess the evidence:</strong> You consider how likely this evidence would be if your initial idea was true (the likelihood, P(E|H)), and also how likely it would be if your initial idea was false (e.g., P(E|not H)).</li>
+              <li><strong>Update your belief:</strong> The theorem combines your prior belief with the strength of the new evidence to give you a revised, more informed belief (the posterior probability, P(H|E)).</li>
+          </ul>
+          <p>Essentially, if the evidence is more likely under your hypothesis than under alternative hypotheses, your belief in your hypothesis increases. If it's less likely, your belief decreases. The P(E) term acts as a normalizing factor, ensuring the resulting probability is valid (between 0 and 1).</p>
+          <p>Bayes' Theorem is a fundamental concept in probability theory that describes how to update the probability of a hypothesis based on new evidence. It's a powerful tool for reasoning under uncertainty.</p>
+
+          <h4>The Theorem Mathematically:</h4>
+          <div class="math-equation" style="font-size: 1.2em; margin: 15px 0;">
+            P(H|E) = <frac><numer>P(E|H) × P(H)</numer><denom>P(E)</denom></frac>
+          </div>
+          <p>Let's break down what these terms mean in the context of our analyzer:</p>
+          <ul>
+              <li><strong>P(H|E):</strong> This is the <strong>Posterior Probability</strong>. It's what we want to find – the probability of our hypothesis (H) being true after considering the new evidence (E).<br><em>In our case: P(H1|Fact) – The probability that Hypothesis 1 (Karen Read is responsible) is true, given a specific Fact from the trial.</em></li>
+              <li><strong>P(E|H):</strong> This is the <strong>Likelihood</strong>. It's the probability of observing the evidence (E) if our hypothesis (H) were true. You set this with the sliders for each fact (e.g., "P(Fact | H1)").<br><em>In our case: P(Fact|H1) – If Karen Read *is* responsible, how likely is this specific Fact?</em></li>
+              <li><strong>P(H):</strong> This is the <strong>Prior Probability</strong>. It's our initial belief in the hypothesis (H) being true before considering the new evidence (E). You set this with the "Your Starting Belief" slider.<br><em>In our case: P(H1) – Your initial belief that Karen Read is responsible, before looking at any specific trial evidence.</em></li>
+              <li><strong>P(E):</strong> This is the <strong>Probability of the Evidence</strong> (also sometimes called the marginal likelihood). It's the overall probability of observing the evidence (E) under all possible hypotheses. It's calculated as:<br><em>P(E) = P(E|H1) * P(H1) + P(E|H2) * P(H2)</em><br><em>In our case: This is the probability of observing a specific Fact, considering both the scenario where H1 is true and the scenario where H2 (Karen Read is NOT responsible) is true. The analyzer calculates this in the background.</em></li>
+          </ul>
+          <p><strong>Important:</strong> This is an educational tool to help understand how evidence can shift perspectives. It's NOT predicting the actual jury outcome or saying what's true. The numbers you put in are your own estimates!</p>
+          <p>The main takeaway should be an understanding of how beliefs can be systematically adjusted in light of new information.</p>
+
+          <h4>Everyday Applications of Bayesian Reasoning:</h4>
+          <p>While the math might seem complex, Bayesian principles are used (often intuitively) in many real-world situations:</p>
+          <ul>
+              <li><strong>Medical Diagnosis:</strong> Doctors update the probability of a patient having a particular disease based on symptoms (evidence) and test results, starting from a baseline understanding of how common the disease is (prior).</li>
+              <li><strong>Spam Filters:</strong> Email services use Bayesian filtering to determine if an email is spam. They learn from words and features commonly found in spam (evidence) to update the probability that a new email is spam.</li>
+              <li><strong>Search Engines:</strong> Search algorithms use Bayesian methods to infer the relevance of web pages to your search query, updating rankings based on clicks and other user interactions (evidence).</li>
+              <li><strong>Weather Forecasting:</strong> Meteorologists update the probability of rain based on current atmospheric conditions (evidence) and historical weather patterns (priors).</li>
+              <li><strong>Legal Reasoning (informally):</strong> Jurors and investigators constantly update their beliefs about guilt or innocence as new pieces of evidence are presented during a trial. This tool aims to make that process more explicit.</li>
+              <li><strong>Everyday Learning:</strong> When you try a new restaurant based on a friend's recommendation (evidence) and your prior experiences with their taste (prior), you're using a form of Bayesian updating.</li>
+          </ul>
+          <p>This analyzer applies this powerful theorem to the evidence presented in the Karen Read trial, allowing you to see how individual pieces of information might systematically shift an initial belief.</p>
+        </div>
+      </div>
+        <script>
+        let posteriorChart = null;
+
+        function initOrUpdatePosteriorChart(probH1) {
+            const ctx = document.getElementById('posteriorChartCanvas').getContext('2d');
+            const probH2 = 1 - probH1;
+
+            const data = {
+                labels: ['P(H1 | Evidence)', 'P(H2 | Evidence)'],
+                datasets: [{
+                    data: [probH1 * 100, probH2 * 100],
+                    backgroundColor: ['rgba(255, 99, 132, 0.7)', 'rgba(75, 192, 192, 0.7)'],
+                    borderColor: ['rgba(255, 99, 132, 1)', 'rgba(75, 192, 192, 1)'],
+                    borderWidth: 1
+                }]
+            };
+
+            const config = {
+                type: 'bar',
+                data: data,
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { beginAtZero: true, max: 100, title: { display: true, text: 'Probability (%)' } },
+                        y: { ticks: { font: { size: 12 } } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        title: { display: true, text: 'Final Posterior Probabilities', font: { size: 16 } },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) { label += ': '; }
+                                    if (context.parsed.x !== null) { label += context.parsed.x.toFixed(2) + '%'; }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            if (posteriorChart) {
+                posteriorChart.data.datasets[0].data = [probH1 * 100, probH2 * 100];
+                posteriorChart.update();
+            } else {
+                posteriorChart = new Chart(ctx, config);
+            }
+        }
+
+        function updatePriorAndRecalculate(value) {
+          document.getElementById('prior-h1-value').textContent = value;
+          document.getElementById('prior-h2-value').textContent = 100 - parseInt(value);
+          document.getElementById('prior-h1').setAttribute('aria-valuetext', value + '%');
+          calculateBayesianUpdate();
+        }
+
+        function updateLikelihoodAndRecalculate(spanId, value) {
+          document.getElementById(spanId).textContent = value;
+          const sliderId = spanId.replace('-value', '');
+          document.getElementById(sliderId).setAttribute('aria-valuetext', value + '%');
+          calculateBayesianUpdate();
+        }
+
+        function calculateBayesianUpdate() {
+          let currentProbH1 = parseInt(document.getElementById('prior-h1').value) / 100;
+
+          // Sequentially update the probability for each piece of evidence
+          for (let i = 1; i <= 18; i++) {
+            const pEvidenceGivenH1Input = document.getElementById(`fact${i}-given-h1`);
+            const pEvidenceGivenH2Input = document.getElementById(`fact${i}-given-h2`);
+            const summaryDisplay = document.getElementById(`fact${i}-summary`);
+
+            if (!pEvidenceGivenH1Input || !pEvidenceGivenH2Input) {
+                if(summaryDisplay) summaryDisplay.innerHTML = '';
+                continue;
+            }
+
+            let pEvidenceGivenH1 = parseInt(pEvidenceGivenH1Input.value) / 100;
+            let pEvidenceGivenH2 = parseInt(pEvidenceGivenH2Input.value) / 100;
+            
+            // Prior for this step is the posterior from the previous step
+            let priorForStepH1 = currentProbH1;
+            let priorForStepH2 = 1 - priorForStepH1;
+
+            // Calculate the marginal likelihood of the evidence
+            let pEvidence = (pEvidenceGivenH1 * priorForStepH1) + (pEvidenceGivenH2 * priorForStepH2);
+
+            // Update the probability of H1 using Bayes' rule
+            if (pEvidence > 0) {
+                currentProbH1 = (pEvidenceGivenH1 * priorForStepH1) / pEvidence;
+            }
+            // If pEvidence is 0, the probability remains unchanged from the previous step.
+
+            const summaryText = `This fact is ${pEvidenceGivenH1Input.value}% likely if H1 (Guilty) is true and ${pEvidenceGivenH2Input.value}% likely if H2 (Not Guilty) is true. <strong>Updated P(H1) after this fact: ${(currentProbH1 * 100).toFixed(2)}%</strong>`;
+            if(summaryDisplay) summaryDisplay.innerHTML = summaryText;
+          }
+
+          // Final posterior after all evidence
+          const finalProbH1 = currentProbH1;
+          const finalProbH2 = 1 - finalProbH1;
+
+          // Display final posterior probabilities
+          document.getElementById('posterior-h1-value').textContent = `${(finalProbH1 * 100).toFixed(2)}%`;
+          document.getElementById('posterior-h2-value').textContent = `${(finalProbH2 * 100).toFixed(2)}%`;
+
+          initOrUpdatePosteriorChart(finalProbH1);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set initial values from sliders
+            updatePriorAndRecalculate(document.getElementById('prior-h1').value);
+            for (let i = 1; i <= 18; i++) {
+                const h1Slider = document.getElementById(`fact${i}-given-h1`);
+                const h2Slider = document.getElementById(`fact${i}-given-h2`);
+                if (h1Slider) {
+                    updateLikelihoodAndRecalculate(`fact${i}-given-h1-value`, h1Slider.value);
+                }
+                if (h2Slider) {
+                    updateLikelihoodAndRecalculate(`fact${i}-given-h2-value`, h2Slider.value);
+                }
+            }
+            // Perform the initial calculation after setting everything up
+            calculateBayesianUpdate();
+        });
+      </script>
+    </section>
+
+  </main>
+  <footer>
+    <p>Static site for educational reference only. Not affiliated with the court or any party.</p>
+    <p><a href="index.html">Back to Main Evidence Page</a></p>
+  </footer>
+</body>
+</html>
