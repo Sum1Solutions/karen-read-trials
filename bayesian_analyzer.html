@@ -117,17 +117,17 @@
         <div class="evidence-item" id="evidence-item-1">
           <h4>Fact 1: John O’Keefe found dead outside 34 Fairview Rd, ~6 a.m., Jan 29, 2022, during snowstorm</h4>
           <div class="likelihood-slider-group">
-            <label for="fact1-given-h1">P(Fact 1 | H1):</label>
+            <label for="fact1-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact1-given-h1" name="fact1-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact1-given-h1-value', this.value)">
             <span id="fact1-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact1-given-h2">P(Fact 1 | H2):</label>
+            <label for="fact1-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact1-given-h2" name="fact1-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact1-given-h2-value', this.value)">
             <span id="fact1-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact1-summary"></span>
           </div>
@@ -135,17 +135,17 @@
         <div class="evidence-item" id="evidence-item-2">
           <h4>Fact 2: Blunt-force head injuries, hypothermia, abrasions on right arm</h4>
           <div class="likelihood-slider-group">
-            <label for="fact2-given-h1">P(Fact 2 | H1):</label>
+            <label for="fact2-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact2-given-h1" name="fact2-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact2-given-h1-value', this.value)">
             <span id="fact2-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact2-given-h2">P(Fact 2 | H2):</label>
+            <label for="fact2-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact2-given-h2" name="fact2-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact2-given-h2-value', this.value)">
             <span id="fact2-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact2-summary"></span>
           </div>
@@ -153,17 +153,17 @@
         <div class="evidence-item" id="evidence-item-3">
           <h4>Fact 3: Broken Lexus taillight; matching plastic on lawn & clothes</h4>
           <div class="likelihood-slider-group">
-            <label for="fact3-given-h1">P(Fact 3 | H1):</label>
+            <label for="fact3-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact3-given-h1" name="fact3-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact3-given-h1-value', this.value)">
             <span id="fact3-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact3-given-h2">P(Fact 3 | H2):</label>
+            <label for="fact3-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact3-given-h2" name="fact3-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact3-given-h2-value', this.value)">
             <span id="fact3-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact3-summary"></span>
           </div>
@@ -171,17 +171,17 @@
         <div class="evidence-item" id="evidence-item-4">
           <h4>Fact 4: Vehicle data: reverse shift & 24 mph spike at 12:45 a.m.</h4>
           <div class="likelihood-slider-group">
-            <label for="fact4-given-h1">P(Fact 4 | H1):</label>
+            <label for="fact4-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact4-given-h1" name="fact4-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact4-given-h1-value', this.value)">
             <span id="fact4-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact4-given-h2">P(Fact 4 | H2):</label>
+            <label for="fact4-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact4-given-h2" name="fact4-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact4-given-h2-value', this.value)">
             <span id="fact4-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact4-summary"></span>
           </div>
@@ -189,17 +189,17 @@
         <div class="evidence-item" id="evidence-item-5">
           <h4>Fact 5: Witnesses (EMT, Jen McCabe) heard Read say “I hit him”</h4>
           <div class="likelihood-slider-group">
-            <label for="fact5-given-h1">P(Fact 5 | H1):</label>
+            <label for="fact5-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact5-given-h1" name="fact5-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact5-given-h1-value', this.value)">
             <span id="fact5-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact5-given-h2">P(Fact 5 | H2):</label>
+            <label for="fact5-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact5-given-h2" name="fact5-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact5-given-h2-value', this.value)">
             <span id="fact5-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact5-summary"></span>
           </div>
@@ -207,17 +207,17 @@
         <div class="evidence-item" id="evidence-item-6">
           <h4>Fact 6: Google search “how long to die in cold”</h4>
           <div class="likelihood-slider-group">
-            <label for="fact6-given-h1">P(Fact 6 | H1):</label>
+            <label for="fact6-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact6-given-h1" name="fact6-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact6-given-h1-value', this.value)">
             <span id="fact6-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact6-given-h2">P(Fact 6 | H2):</label>
+            <label for="fact6-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact6-given-h2" name="fact6-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact6-given-h2-value', this.value)">
             <span id="fact6-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact6-summary"></span>
           </div>
@@ -226,17 +226,17 @@
         <div class="evidence-item" id="evidence-item-7">
           <h4>Fact 7: Apple Health/Waze data from victim’s phone</h4>
           <div class="likelihood-slider-group">
-            <label for="fact7-given-h1">P(Fact 7 | H1):</label>
+            <label for="fact7-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact7-given-h1" name="fact7-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact7-given-h1-value', this.value)">
             <span id="fact7-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact7-given-h2">P(Fact 7 | H2):</label>
+            <label for="fact7-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact7-given-h2" name="fact7-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact7-given-h2-value', this.value)">
             <span id="fact7-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact7-summary"></span>
           </div>
@@ -245,17 +245,17 @@
         <div class="evidence-item" id="evidence-item-8">
           <h4>Fact 8: Snow-plow driver saw no body on lawn</h4>
           <div class="likelihood-slider-group">
-            <label for="fact8-given-h1">P(Fact 8 | H1):</label>
+            <label for="fact8-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact8-given-h1" name="fact8-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact8-given-h1-value', this.value)">
             <span id="fact8-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact8-given-h2">P(Fact 8 | H2):</label>
+            <label for="fact8-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact8-given-h2" name="fact8-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact8-given-h2-value', this.value)">
             <span id="fact8-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact8-summary"></span>
           </div>
@@ -264,17 +264,17 @@
         <div class="evidence-item" id="evidence-item-9">
           <h4>Fact 9: Evidence collected with leaf-blower, Solo cups, grocery bags</h4>
           <div class="likelihood-slider-group">
-            <label for="fact9-given-h1">P(Fact 9 | H1):</label>
+            <label for="fact9-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact9-given-h1" name="fact9-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact9-given-h1-value', this.value)">
             <span id="fact9-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact9-given-h2">P(Fact 9 | H2):</label>
+            <label for="fact9-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact9-given-h2" name="fact9-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact9-given-h2-value', this.value)">
             <span id="fact9-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact9-summary"></span>
           </div>
@@ -283,17 +283,17 @@
         <div class="evidence-item" id="evidence-item-10">
           <h4>Fact 10: 52 unanswered calls & 8 angry voicemails left by Read</h4>
           <div class="likelihood-slider-group">
-            <label for="fact10-given-h1">P(Fact 10 | H1):</label>
+            <label for="fact10-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact10-given-h1" name="fact10-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact10-given-h1-value', this.value)">
             <span id="fact10-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact10-given-h2">P(Fact 10 | H2):</label>
+            <label for="fact10-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact10-given-h2" name="fact10-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact10-given-h2-value', this.value)">
             <span id="fact10-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact10-summary"></span>
           </div>
@@ -302,17 +302,17 @@
         <div class="evidence-item" id="evidence-item-11">
           <h4>Fact 11: Michael Proctor (lead investigator) fired between trials</h4>
           <div class="likelihood-slider-group">
-            <label for="fact11-given-h1">P(Fact 11 | H1):</label>
+            <label for="fact11-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact11-given-h1" name="fact11-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact11-given-h1-value', this.value)">
             <span id="fact11-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact11-given-h2">P(Fact 11 | H2):</label>
+            <label for="fact11-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact11-given-h2" name="fact11-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact11-given-h2-value', this.value)">
             <span id="fact11-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact11-summary"></span>
           </div>
@@ -321,17 +321,17 @@
         <div class="evidence-item" id="evidence-item-12">
           <h4>Fact 12: Rice-sized plastic debris found in O'Keefe's clothing</h4>
           <div class="likelihood-slider-group">
-            <label for="fact12-given-h1">P(Fact 12 | H1):</label>
+            <label for="fact12-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact12-given-h1" name="fact12-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact12-given-h1-value', this.value)">
             <span id="fact12-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact12-given-h2">P(Fact 12 | H2):</label>
+            <label for="fact12-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact12-given-h2" name="fact12-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact12-given-h2-value', this.value)">
             <span id="fact12-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact12-summary"></span>
           </div>
@@ -340,17 +340,17 @@
         <div class="evidence-item" id="evidence-item-13">
           <h4>Fact 13: SUV scuff mark matches O'Keefe's hip height</h4>
           <div class="likelihood-slider-group">
-            <label for="fact13-given-h1">P(Fact 13 | H1):</label>
+            <label for="fact13-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact13-given-h1" name="fact13-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact13-given-h1-value', this.value)">
             <span id="fact13-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact13-given-h2">P(Fact 13 | H2):</label>
+            <label for="fact13-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact13-given-h2" name="fact13-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact13-given-h2-value', this.value)">
             <span id="fact13-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact13-summary"></span>
           </div>
@@ -359,17 +359,17 @@
         <div class="evidence-item" id="evidence-item-14">
           <h4>Fact 14: Timeline discrepancy: 21-29 seconds between SUV and phone clocks</h4>
           <div class="likelihood-slider-group">
-            <label for="fact14-given-h1">P(Fact 14 | H1):</label>
+            <label for="fact14-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact14-given-h1" name="fact14-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact14-given-h1-value', this.value)">
             <span id="fact14-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact14-given-h2">P(Fact 14 | H2):</label>
+            <label for="fact14-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact14-given-h2" name="fact14-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact14-given-h2-value', this.value)">
             <span id="fact14-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact14-summary"></span>
           </div>
@@ -378,17 +378,17 @@
         <div class="evidence-item" id="evidence-item-15">
           <h4>Fact 15: Jennifer McCabe emerged as central witness (3 days testimony)</h4>
           <div class="likelihood-slider-group">
-            <label for="fact15-given-h1">P(Fact 15 | H1):</label>
+            <label for="fact15-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact15-given-h1" name="fact15-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact15-given-h1-value', this.value)">
             <span id="fact15-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact15-given-h2">P(Fact 15 | H2):</label>
+            <label for="fact15-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact15-given-h2" name="fact15-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact15-given-h2-value', this.value)">
             <span id="fact15-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact15-summary"></span>
           </div>
@@ -397,17 +397,17 @@
         <div class="evidence-item" id="evidence-item-16">
           <h4>Fact 16: Defense crash reconstruction expert testimony</h4>
           <div class="likelihood-slider-group">
-            <label for="fact16-given-h1">P(Fact 16 | H1):</label>
+            <label for="fact16-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact16-given-h1" name="fact16-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact16-given-h1-value', this.value)">
             <span id="fact16-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact16-given-h2">P(Fact 16 | H2):</label>
+            <label for="fact16-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact16-given-h2" name="fact16-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact16-given-h2-value', this.value)">
             <span id="fact16-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact16-summary"></span>
           </div>
@@ -416,17 +416,17 @@
         <div class="evidence-item" id="evidence-item-17">
           <h4>Fact 17: Taillight evidence re-examination</h4>
           <div class="likelihood-slider-group">
-            <label for="fact17-given-h1">P(Fact 17 | H1):</label>
+            <label for="fact17-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact17-given-h1" name="fact17-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact17-given-h1-value', this.value)">
             <span id="fact17-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact17-given-h2">P(Fact 17 | H2):</label>
+            <label for="fact17-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact17-given-h2" name="fact17-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact17-given-h2-value', this.value)">
             <span id="fact17-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact17-summary"></span>
           </div>
@@ -435,17 +435,17 @@
         <div class="evidence-item" id="evidence-item-18">
           <h4>Fact 18: Colin Albert's testimony and text messages</h4>
           <div class="likelihood-slider-group">
-            <label for="fact18-given-h1">P(Fact 18 | H1):</label>
+            <label for="fact18-given-h1">If Karen Read is responsible, how likely is this fact?</label>
             <input type="range" id="fact18-given-h1" name="fact18-given-h1" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact18-given-h1-value', this.value)">
             <span id="fact18-given-h1-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Guilty (H1), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is responsible</em></p>
           <div class="likelihood-slider-group">
-            <label for="fact18-given-h2">P(Fact 18 | H2):</label>
+            <label for="fact18-given-h2">If Karen Read is NOT responsible, how likely is this fact?</label>
             <input type="range" id="fact18-given-h2" name="fact18-given-h2" min="0" max="100" value="50" oninput="updateLikelihoodAndRecalculate('fact18-given-h2-value', this.value)">
             <span id="fact18-given-h2-value" class="slider-value-display">50</span>%
           </div>
-          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This estimates: "If Karen Read is Innocent (H2), how likely is this specific fact?"</em></p>
+          <p style="font-size:0.9em; margin-top:2px; margin-bottom:8px; color:#555;"><em>This slider shows how likely you think this fact is if Karen Read is not responsible</em></p>
           <div class="updated-belief-display">
             <span id="fact18-summary"></span>
           </div>
