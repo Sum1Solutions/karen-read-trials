@@ -16,7 +16,12 @@ This project is a comprehensive, open-source initiative to document and compare 
 **Site Features:**
 - **Evidence Comparison Table:** 19 key facts comparing prosecution vs defense arguments across both trials.
 - **Daily Trial Timeline:** Comprehensive day-by-day breakdown of all 31 trial days (April 22 - June 13, 2025).
-- **Bayesian Analyzer:** An interactive tool to explore how evidence impacts belief, featuring a narrative-driven introduction and a detailed, collapsible explanation of Bayesian logic and mathematics.
+- **Enhanced Bayesian Analyzer:** An interactive tool to explore how evidence impacts belief, featuring:
+  - Detailed reasoning for each piece of evidence
+  - Default likelihood values based on evidential strength
+  - Clear probability indicators (P(Evidence | H1) and P(Evidence | H2))
+  - Visual representation of how each fact affects the overall probability
+  - Collapsible explanations of Bayesian logic and mathematics
 - **Updated References:** 14+ key reference pages from major news outlets and court coverage (see Links & References page).
 
 ## What We Built
