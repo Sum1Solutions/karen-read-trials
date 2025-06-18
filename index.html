@@ -279,24 +279,38 @@
     <section class="content-box">
       <h2>1. Start with a Prior</h2>
       <p>We looked at how often people are hurt by their partners. That's not super common when there's no history of violence.</p>
-      
+
       <div class="probability-display">
         <div class="probability-box">
           <h3>Chance Karen did it (H1)</h3>
-          <div class="probability-value">10%</div>
+          <div class="probability-value" id="prior-h1-text">10%</div>
           <p>Prior probability</p>
         </div>
         <div class="probability-box">
           <h3>Chance someone else did it (H2)</h3>
-          <div class="probability-value">60%</div>
+          <div class="probability-value" id="prior-h2-text">60%</div>
           <p>Prior probability</p>
         </div>
         <div class="probability-box">
           <h3>Chance of mixed scenario (H3)</h3>
-          <div class="probability-value">30%</div>
+          <div class="probability-value" id="prior-h3-text">30%</div>
           <p>Prior probability</p>
         </div>
       </div>
+
+      <p><strong>Adjust the sliders to set your priors:</strong></p>
+      <form id="priorsForm" style="margin: 20px 0;">
+        <label for="h1">H1: Karen did it</label><br>
+        <input type="range" id="h1" name="h1" min="0" max="100" value="10" step="1"><span id="h1Val" style="margin-left: 10px;">10%</span><br><br>
+
+        <label for="h2">H2: Someone else did it</label><br>
+        <input type="range" id="h2" name="h2" min="0" max="100" value="60" step="1"><span id="h2Val" style="margin-left: 10px;">60%</span><br><br>
+
+        <label for="h3">H3: Mixed/cover-up</label><br>
+        <input type="range" id="h3" name="h3" min="0" max="100" value="30" step="1"><span id="h3Val" style="margin-left: 10px;">30%</span><br><br>
+
+        <p><strong>Total must equal 100%.</strong> If it doesn't, values will be scaled automatically.</p>
+      </form>
     </section>
 
     <section class="content-box">
@@ -406,17 +420,17 @@
       <div class="probability-display">
         <div class="probability-box">
           <h3>H1: Karen did it</h3>
-          <div class="probability-value">10%</div>
+          <div class="probability-value" id="posterior-h1-text">10%</div>
           <p>→ now 10% (unchanged due to weak fit)</p>
         </div>
         <div class="probability-box">
           <h3>H2: Someone else did it</h3>
-          <div class="probability-value">60%</div>
+          <div class="probability-value" id="posterior-h2-text">60%</div>
           <p>→ now 60% (best fit for most evidence)</p>
         </div>
         <div class="probability-box">
           <h3>H3: Mixed scenario</h3>
-          <div class="probability-value">30%</div>
+          <div class="probability-value" id="posterior-h3-text">30%</div>
           <p>→ now 30% (fits some evidence better than others)</p>
         </div>
       </div>
@@ -449,20 +463,7 @@
 
   <section class="content-box">
     <h2>🎛️ Try It Yourself: Adjust the Priors</h2>
-    <p>Before the evidence, what did <em>you</em> think? Drag the sliders to set your own starting assumptions. Then see how the outcome changes when the evidence is applied (held constant).</p>
-
-    <form id="priorsForm" style="margin: 20px 0;">
-      <label for="h1">H1: Karen did it</label><br>
-      <input type="range" id="h1" name="h1" min="0" max="100" value="10" step="1"><span id="h1Val" style="margin-left: 10px;">10%</span><br><br>
-
-      <label for="h2">H2: Someone else did it</label><br>
-      <input type="range" id="h2" name="h2" min="0" max="100" value="60" step="1"><span id="h2Val" style="margin-left: 10px;">60%</span><br><br>
-
-      <label for="h3">H3: Mixed/cover-up</label><br>
-      <input type="range" id="h3" name="h3" min="0" max="100" value="30" step="1"><span id="h3Val" style="margin-left: 10px;">30%</span><br><br>
-
-      <p><strong>Total must equal 100%.</strong> If it doesn't, values will be scaled automatically.</p>
-    </form>
+    <p>Use the sliders above to set your own starting assumptions. The chart below shows how the outcome changes when the evidence is applied (held constant).</p>
 
     <div class="chart-container" style="height: 400px; margin: 20px 0;">
       <canvas id="posteriorChart"></canvas>
@@ -563,6 +564,13 @@
       document.getElementById('h2Val').innerText = h2 + '%';
       document.getElementById('h3Val').innerText = h3 + '%';
 
+      // Update prior text values
+      const priorTexts = ['prior-h1-text', 'prior-h2-text', 'prior-h3-text'];
+      [h1, h2, h3].forEach((val, idx) => {
+        const el = document.getElementById(priorTexts[idx]);
+        if (el) el.innerText = val + '%';
+      });
+
       // Bayesian update
       const priorOdds = [h1 / 100, h2 / 100, h3 / 100];
       const postOdds = [
@@ -577,6 +585,13 @@
       // Update chart data
       chart.data.datasets[0].data = postProbs;
       chart.update();
+
+      // Update posterior text values
+      const postTexts = ['posterior-h1-text', 'posterior-h2-text', 'posterior-h3-text'];
+      postProbs.forEach((val, idx) => {
+        const el = document.getElementById(postTexts[idx]);
+        if (el) el.innerText = val.toFixed(1) + '%';
+      });
     }
 
     // Add event listeners to sliders
