@@ -279,7 +279,7 @@
     <section class="content-box">
       <h2>1. Start with a Prior</h2>
       <p>We looked at how often people are hurt by their partners. That's not super common when there's no history of violence.</p>
-      
+
       <div class="probability-display">
         <div class="probability-box">
           <h3>Chance Karen did it (H1)</h3>
@@ -297,6 +297,20 @@
           <p>Prior probability</p>
         </div>
       </div>
+
+      <p><strong>Adjust the sliders to set your priors:</strong></p>
+      <form id="priorsForm" style="margin: 20px 0;">
+        <label for="h1">H1: Karen did it</label><br>
+        <input type="range" id="h1" name="h1" min="0" max="100" value="10" step="1"><span id="h1Val" style="margin-left: 10px;">10%</span><br><br>
+
+        <label for="h2">H2: Someone else did it</label><br>
+        <input type="range" id="h2" name="h2" min="0" max="100" value="60" step="1"><span id="h2Val" style="margin-left: 10px;">60%</span><br><br>
+
+        <label for="h3">H3: Mixed/cover-up</label><br>
+        <input type="range" id="h3" name="h3" min="0" max="100" value="30" step="1"><span id="h3Val" style="margin-left: 10px;">30%</span><br><br>
+
+        <p><strong>Total must equal 100%.</strong> If it doesn't, values will be scaled automatically.</p>
+      </form>
     </section>
 
     <section class="content-box">
@@ -449,20 +463,7 @@
 
   <section class="content-box">
     <h2>🎛️ Try It Yourself: Adjust the Priors</h2>
-    <p>Before the evidence, what did <em>you</em> think? Drag the sliders to set your own starting assumptions. Then see how the outcome changes when the evidence is applied (held constant).</p>
-
-    <form id="priorsForm" style="margin: 20px 0;">
-      <label for="h1">H1: Karen did it</label><br>
-      <input type="range" id="h1" name="h1" min="0" max="100" value="10" step="1"><span id="h1Val" style="margin-left: 10px;">10%</span><br><br>
-
-      <label for="h2">H2: Someone else did it</label><br>
-      <input type="range" id="h2" name="h2" min="0" max="100" value="60" step="1"><span id="h2Val" style="margin-left: 10px;">60%</span><br><br>
-
-      <label for="h3">H3: Mixed/cover-up</label><br>
-      <input type="range" id="h3" name="h3" min="0" max="100" value="30" step="1"><span id="h3Val" style="margin-left: 10px;">30%</span><br><br>
-
-      <p><strong>Total must equal 100%.</strong> If it doesn't, values will be scaled automatically.</p>
-    </form>
+    <p>Use the sliders above to set your own starting assumptions. The chart below shows how the outcome changes when the evidence is applied (held constant).</p>
 
     <div class="chart-container" style="height: 400px; margin: 20px 0;">
       <canvas id="posteriorChart"></canvas>
