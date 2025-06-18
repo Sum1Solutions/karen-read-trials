@@ -283,17 +283,17 @@
       <div class="probability-display">
         <div class="probability-box">
           <h3>Chance Karen did it (H1)</h3>
-          <div class="probability-value">10%</div>
+          <div class="probability-value" id="prior-h1-text">10%</div>
           <p>Prior probability</p>
         </div>
         <div class="probability-box">
           <h3>Chance someone else did it (H2)</h3>
-          <div class="probability-value">60%</div>
+          <div class="probability-value" id="prior-h2-text">60%</div>
           <p>Prior probability</p>
         </div>
         <div class="probability-box">
           <h3>Chance of mixed scenario (H3)</h3>
-          <div class="probability-value">30%</div>
+          <div class="probability-value" id="prior-h3-text">30%</div>
           <p>Prior probability</p>
         </div>
       </div>
@@ -406,17 +406,17 @@
       <div class="probability-display">
         <div class="probability-box">
           <h3>H1: Karen did it</h3>
-          <div class="probability-value">10%</div>
+          <div class="probability-value" id="posterior-h1-text">10%</div>
           <p>→ now 10% (unchanged due to weak fit)</p>
         </div>
         <div class="probability-box">
           <h3>H2: Someone else did it</h3>
-          <div class="probability-value">60%</div>
+          <div class="probability-value" id="posterior-h2-text">60%</div>
           <p>→ now 60% (best fit for most evidence)</p>
         </div>
         <div class="probability-box">
           <h3>H3: Mixed scenario</h3>
-          <div class="probability-value">30%</div>
+          <div class="probability-value" id="posterior-h3-text">30%</div>
           <p>→ now 30% (fits some evidence better than others)</p>
         </div>
       </div>
@@ -563,6 +563,13 @@
       document.getElementById('h2Val').innerText = h2 + '%';
       document.getElementById('h3Val').innerText = h3 + '%';
 
+      // Update prior text values
+      const priorTexts = ['prior-h1-text', 'prior-h2-text', 'prior-h3-text'];
+      [h1, h2, h3].forEach((val, idx) => {
+        const el = document.getElementById(priorTexts[idx]);
+        if (el) el.innerText = val + '%';
+      });
+
       // Bayesian update
       const priorOdds = [h1 / 100, h2 / 100, h3 / 100];
       const postOdds = [
@@ -577,6 +584,13 @@
       // Update chart data
       chart.data.datasets[0].data = postProbs;
       chart.update();
+
+      // Update posterior text values
+      const postTexts = ['posterior-h1-text', 'posterior-h2-text', 'posterior-h3-text'];
+      postProbs.forEach((val, idx) => {
+        const el = document.getElementById(postTexts[idx]);
+        if (el) el.innerText = val.toFixed(1) + '%';
+      });
     }
 
     // Add event listeners to sliders
