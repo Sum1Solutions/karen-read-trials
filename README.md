@@ -12,24 +12,30 @@ This project maintains a juror's perspective by focusing on evidence and testimo
 - **Neutral Stance**: Presents competing interpretations without editorializing
 - **Transparent Sourcing**: All facts are linked to trial testimony or official court documents
 
-## Current Status (June 2025)
+## Case Outcome (June 2025)
 
-**Current Trial Status:** Jury deliberations began on June 13, 2025, after 31 total trial days. The prosecution presented its case over 23 days (38 witnesses), and the defense presented its case over 8 days (11 witnesses).
+**Verdict Reached (June 18, 2025):**
+- **Not Guilty** of second-degree murder, manslaughter, and leaving the scene of an accident
+- **Guilty** of Operating Under the Influence (OUI)
+- **Sentence:** 1 year probation, 24D alcohol education program
 
-**Key Developments:**
-- Defense presented crash reconstruction and forensic evidence challenging the prosecution's narrative
-- Both sides delivered closing arguments on June 12, 2025
-- Jury is currently deliberating on charges of second-degree murder, manslaughter, and leaving the scene
+**Trial Summary:**
+- 31 total trial days (April 22 - June 13, 2025)
+- 5 days of jury deliberations (June 13-18, 2025)
+- Prosecution presented case over 23 days (38 witnesses)
+- Defense presented case over 8 days (11 witnesses)
+- Jury deliberated for approximately 21 hours over 5 days
 
 **Site Features:**
 - **Evidence Comparison Table:** 19 key facts comparing prosecution vs defense arguments across both trials.
-- **Daily Trial Timeline:** Comprehensive day-by-day breakdown of all 31 trial days (April 22 - June 13, 2025).
+- **Daily Trial Timeline:** Comprehensive day-by-day breakdown of all 31 trial days (April 22 - June 13, 2025) and verdict details.
 - **Enhanced Bayesian Analyzer:** An interactive tool to explore how evidence impacts belief, featuring:
   - Detailed reasoning for each piece of evidence
   - Default likelihood values based on evidential strength
   - Clear probability indicators (P(Evidence | H1) and P(Evidence | H2))
   - Visual representation of how each fact affects the overall probability
   - Collapsible explanations of Bayesian logic and mathematics
+- **Verdict Information:** Complete details of the June 18, 2025 verdict and sentencing
 - **Updated References:** 30+ key reference pages from major news outlets and court coverage (see Links & References page).
 
 ## Project Features
@@ -40,7 +46,7 @@ This project maintains a juror's perspective by focusing on evidence and testimo
 - **Cross-Referenced:** Each evidence item linked to original sources and news coverage
 
 ### 2. **Daily Trial Timeline**
-- **Complete Day-by-Day Coverage:** Every trial day from opening statements to prosecution rest
+- **Complete Day-by-Day Coverage:** Every trial day from opening statements through verdict
 - **Witness Details:** Who testified, what they said, and key points from each day
 - **Prosecution vs Defense:** Daily breakdown of competing arguments and strategies
 - **Evidence Correlation:** Each day linked to relevant facts in the main evidence table
@@ -76,7 +82,7 @@ This project maintains a juror's perspective by focusing on evidence and testimo
 - **Accessibility:** Make complex trial information readable and navigable for all audiences, including those on mobile devices.
 - **Public Interest:** Support informed discussion and reporting by providing a single, well-organized resource with links to all major news and official sources.
 
-## Key Retrial Developments Documented
+## Case Summary and Key Developments
 
 ### **Major Changes from First Trial:**
 - **Key Difference in Retrial:** Michael Proctor did not testify in person; his prior testimony was read into the record
