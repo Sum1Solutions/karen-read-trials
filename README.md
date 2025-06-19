@@ -38,6 +38,38 @@ This project maintains a juror's perspective by focusing on evidence and testimo
 - **Verdict Information:** Complete details of the June 18, 2025 verdict and sentencing
 - **Updated References:** 30+ key reference pages from major news outlets and court coverage (see Links & References page).
 
+## Bayesian Analysis Tool
+
+This interactive tool demonstrates how Bayesian reasoning can be applied to evaluate the strength of evidence in the Karen Read case. The tool allows you to adjust your prior beliefs and evidence weights to see how they affect the posterior probabilities of different hypotheses.
+
+### How It Works
+
+1. **Setting Prior Probabilities**
+   - Adjust the sliders to set your initial beliefs about three possible scenarios:
+     - H1: Karen Read is guilty
+     - H2: Someone else is responsible
+     - H3: A mixed scenario occurred
+   - The sliders automatically adjust to ensure they always sum to 100%
+   - Special case: Set any slider to 100% to explore extreme beliefs (other sliders will automatically adjust to 0%)
+
+2. **Evaluating Evidence**
+   - Each piece of evidence is assigned a weight that represents its strength
+   - Weights are multiplicative factors that adjust the prior probabilities
+   - Higher weights indicate stronger evidence for a particular hypothesis
+
+3. **Understanding the Math**
+   - The tool uses Bayes' Theorem to update probabilities:
+     ```
+     Posterior = (Prior × Likelihood) / Evidence
+     ```
+   - The "Likelihood" is determined by the evidence weights
+   - The "Evidence" term ensures all probabilities sum to 100%
+
+4. **Interpreting Results**
+   - The chart shows how your beliefs should rationally update based on the evidence
+   - The "Posterior Probability" boxes show the final probabilities after considering all evidence
+   - The "Strength of Evidence" section explains how each piece of evidence affects your beliefs
+
 ## Project Features
 
 ### 1. **Comprehensive Evidence Analysis**
