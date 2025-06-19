@@ -1,5 +1,5 @@
 # The Right Side of Wrong: Bayes' Theorem in Action
-## The Karen Read Case
+## The Karen Read Case (Who Killed John O'Keefe?)
 
 This project is an open-source initiative to document and analyze the evidence and arguments presented to the jury in both the first Karen Read trial (2024) and the retrial (2025) through the lens of Bayesian reasoning.
 
