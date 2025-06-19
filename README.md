@@ -93,7 +93,7 @@ This interactive tool demonstrates how Bayesian reasoning can be applied to eval
 ## How We Built It
 
 ### **Research & Data Collection**
-- **AI-Assisted Analysis:** This project utilizes AI language models to synthesize and organize information while maintaining strict adherence to factual reporting
+
 - **Web Search & Analysis:** Comprehensive search of major news outlets for daily trial coverage
 - **Source Verification:** Cross-referenced multiple sources for accuracy
 
@@ -102,7 +102,7 @@ This interactive tool demonstrates how Bayesian reasoning can be applied to eval
 - **Responsive Tables:** Custom CSS for readable tables across all device sizes
 - **Cross-Linking:** Internal navigation between evidence table and daily timeline
 - **Accessibility:** Proper semantic HTML and mobile-responsive design
-- **AI-Assisted Analysis:** This project utilizes AI language models (Claude and ChatGPT) to help synthesize and organize complex trial information while maintaining strict adherence to factual reporting
+
 
 ### **Content Organization**
 - **Evidence Synthesis:** Combined information from 38 witnesses and 23 days of testimony
