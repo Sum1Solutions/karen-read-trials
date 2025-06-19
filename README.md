@@ -137,6 +137,8 @@ To modify the analysis:
 1. Open `index.html` in your browser
 2. Navigate to the Bayesian Analyzer section
 3. Use the sliders to adjust your confidence in each piece of evidence
+   - Higher numbers mean the evidence favors that option more.
+   - Lower numbers mean the evidence is weak or missing.
 4. Observe how the final probability changes based on your inputs
 
 Your analysis is private and runs entirely in your browser - no data is sent to any server.
