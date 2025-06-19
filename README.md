@@ -5,7 +5,9 @@ This project is an open-source initiative to document and analyze the evidence a
 
 ## Analysis Approach
 
-This project maintains a juror's perspective by focusing on evidence and testimony formally presented in court. Key aspects of our approach:
+This project maintains a juror's perspective by focusing on evidence and testimony formally presented in court. It is intended to help us explore how reasonable people, starting from different assumptions or weighing evidence differently, can reach very different conclusions about the same case. By making our reasoning explicit, we can better understand how and why viewpoints diverge—even when everyone is acting in good faith. This is an educational exploration of Bayesian reasoning, not a verdict predictor.
+
+Key aspects of our approach:
 
 - **Evidence-Based Analysis**: All evaluations are grounded in testimony and exhibits admitted during trial
 - **Trial-Specific Context**: Notes differences in evidence presentation between the first trial and retrial

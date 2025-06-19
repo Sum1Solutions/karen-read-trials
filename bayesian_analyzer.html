@@ -90,7 +90,7 @@
           </ul>
           <h4>Key Considerations, Assumptions, and Educational Purpose:</h4>
           <ul>
-            <li><strong>Educational Focus:</strong> This tool's goal is to illustrate Bayesian reasoning, not to predict the trial's outcome.</li>
+            <li><strong>Educational Focus:</strong> This site is intended to help us explore how reasonable people, starting from different assumptions or weighing evidence differently, can reach very different conclusions about the same case. By making our reasoning explicit, we can better understand how and why viewpoints diverge—even when everyone is acting in good faith. This is an educational exploration of Bayesian reasoning, not a verdict predictor.</li>
             <li><strong>Subjectivity is Inherent:</strong> Your 'Prior' and 'Likelihood' estimates are personal judgments. The output directly reflects your inputs.</li>
             <li><strong>Model Simplifications:</strong> The model assumes each piece of evidence is independent for simplicity. In reality, facts can be interconnected.</li>
           </ul>
@@ -117,12 +117,46 @@
         <li><strong>If Karen Read is responsible (H1):</strong> How likely would we expect to see this specific fact? (0% = would never happen if she's guilty, 100% = would definitely happen if she's guilty)</li>
         <li><strong>If Karen Read is NOT responsible (H2):</strong> How likely would we expect to see this specific fact? (0% = would never happen if she's innocent, 100% = would definitely happen if she's innocent)</li>
       </ol>
-      <p><em>Key points to consider:</em></p>
-      <ul>
-        <li>A fact that's equally likely under both hypotheses (e.g., 50/50) doesn't change your belief either way</li>
-        <li>A fact more likely under H1 than H2 increases your belief in H1</li>
-        <li>A fact more likely under H2 than H1 decreases your belief in H1</li>
-      </ul>
+      <div class="weight-explanation" style="background: #f8f9fa; padding: 10px 15px; border-radius: 5px; margin-bottom: 20px;">
+        <p><strong>How to interpret the likelihood sliders:</strong> <span title="0–1× = Weak, 5–7× = Strong, 10× = Conclusive" style="cursor: help; color: #2c5aa8; font-size:1.1em;">&#9432;</span></p>
+        <ul style="margin-top: 5px; padding-left: 20px;">
+          <li><strong>0–1×</strong>: Weak evidence</li>
+          <li><strong>5–7×</strong>: Strong evidence</li>
+          <li><strong>10×</strong>: Very strong/conclusive</li>
+          <li>Values in between represent varying degrees of support</li>
+        </ul>
+      </div>
+      <div class="callout-info" style="background: #e3f2fd; border-left: 5px solid #2196f3; padding: 12px 18px; border-radius: 6px; margin-bottom: 18px;">
+        <span style="font-size:1.2em; margin-right:8px;">💡</span>
+        <strong>Tip:</strong> Play with the sliders and priors to see how your beliefs change! Bayesian reasoning is about making your assumptions explicit and seeing how conclusions shift.
+      </div>
+      <div class="flowchart-box" style="background: #fafafa; border: 1px solid #bdbdbd; border-radius: 7px; padding: 12px 18px; margin-bottom: 20px; text-align: center;">
+        <strong>How Bayesian Updating Works:</strong><br>
+        <svg width="360" height="64" viewBox="0 0 360 64" style="vertical-align: middle;">
+          <rect x="8" y="16" width="90" height="32" rx="8" fill="#e3f2fd" stroke="#2196f3"/>
+          <text x="53" y="36" text-anchor="middle" font-size="15" fill="#1565c0">Prior</text>
+          <polygon points="98,32 118,32 118,28 138,32 118,36 118,32" fill="#90caf9"/>
+          <rect x="138" y="16" width="90" height="32" rx="8" fill="#fff3e0" stroke="#ffb300"/>
+          <text x="183" y="36" text-anchor="middle" font-size="15" fill="#e65100">Evidence</text>
+          <polygon points="228,32 248,32 248,28 268,32 248,36 248,32" fill="#ffe082"/>
+          <rect x="268" y="16" width="90" height="32" rx="8" fill="#e8f5e9" stroke="#43a047"/>
+          <text x="313" y="36" text-anchor="middle" font-size="15" fill="#2e7d32">Posterior</text>
+        </svg>
+        <div style="font-size:0.98em; color:#555; margin-top:6px;">Start with a prior belief → update with evidence → get a new belief (posterior)</div>
+      </div>
+      <details style="margin-bottom: 18px;">
+        <summary style="font-weight: bold; cursor: pointer;">Show an Example: Numeric Walkthrough</summary>
+        <div style="padding:12px 0 0 0;">
+          <strong>Example:</strong> Suppose your prior for H1 is 20%, and you rate a piece of evidence as 80% likely if H1 is true, and 40% likely if H2 is true.<br>
+          <ul>
+            <li>Prior odds for H1:H2 = 20:80 = 0.25</li>
+            <li>Likelihood ratio = 80/40 = 2</li>
+            <li>Posterior odds = 0.25 × 2 = 0.5</li>
+            <li>Posterior probability for H1 = 0.5 / (0.5 + 1) = 33%</li>
+          </ul>
+          <span style="font-size:0.98em; color:#555;">This is how a single piece of evidence updates your belief!</span>
+        </div>
+      </details>
 
       <div id="likelihoods-section">
         <div class="evidence-item" id="evidence-item-1">
@@ -472,17 +506,6 @@
           </div>
           <div class="updated-belief-display">
             <span id="fact18-summary"></span>
-          </div>
-        </div>
-
-        <!-- No <hr> after the last item -->
-      </div>
-    </section>
-
-    <section class="results-box">
-      <h3>Your Updated Belief (Posterior Probability)</h3>
-      <div id="results-section">
-        <h4>After considering the evidence:</h4>
         <p>Updated Belief in H1 (Read is responsible): <strong id="posterior-h1-value">--</strong>%</p>
         <p>Updated Belief in H2 (Read is NOT responsible): <strong id="posterior-h2-value">--</strong>%</p>
 
@@ -491,7 +514,8 @@
           <canvas id="posteriorChartCanvas"></canvas>
         </div>
 
-        <div class="explanation-section" style="text-align: left; margin-top: 30px;">
+        <h3 style="margin-top: 48px; margin-bottom: 18px; color: #2c3e50; font-weight: 700;">Part 3: Discussion</h3>
+<div class="explanation-section readable-section" style="text-align: left; margin-top: 0; color: #23272f; background: #f8f9fa; border-radius: 8px; padding: 24px 18px 18px 18px; box-shadow: 0 2px 8px rgba(80,120,200,0.03);">
           <h4>The Logic: Why Does It Work?</h4>
           <p>Bayes' Theorem provides a rational way to update beliefs. Here's the core idea:</p>
           <ul>

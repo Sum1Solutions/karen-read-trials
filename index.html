@@ -249,6 +249,19 @@
     </div>
   </header>
 
+  <section class="content-box" style="background:#fffde7; border-left:5px solid #ffc107; margin-top:32px;">
+    <h2 style="margin-top:0;">⚠️ Limitations & Caveats</h2>
+    <ul style="margin-bottom: 0.7em;">
+      <li><strong>Priors are educated guesses:</strong> The starting probabilities (“priors”) are based on general reasoning and public data, not precise statistics for this case. Try adjusting them to see how your assumptions affect the outcome!</li>
+      <li><strong>Evidence weights are subjective:</strong> The likelihood sliders represent how strongly each piece of evidence supports or contradicts each hypothesis. There’s no universal scale—use the rubric above as a guide, and experiment with different values.</li>
+      <li><strong>Assumes evidence pieces are independent:</strong> For simplicity, the model treats each piece of evidence as if it’s unrelated to the others. In reality, some evidence may be connected (e.g., timestamps and phone records). This can make the model overconfident—combine related items or adjust weights down if you suspect overlap.</li>
+      <li><strong>Not all factors are quantified:</strong> Some important aspects (like emotional state or motive) are hard to express as numbers. This model focuses on the evidence that can be reasonably quantified.</li>
+      <li><strong>No real-world validation:</strong> This tool is for learning and exploration. It hasn’t been tested against actual trial outcomes. Use it to understand the process, not to predict verdicts.</li>
+      <li><strong>Sensitivity to assumptions:</strong> Small changes in priors or evidence weights can lead to big changes in the final probabilities. Try moving the sliders to see how robust (or fragile) the conclusions are.</li>
+    </ul>
+    <div style="font-size:0.97em; color:#888; margin-top:8px;">This site is intended to help us explore how reasonable people, starting from different assumptions or weighing evidence differently, can reach very different conclusions about the same case. By making our reasoning explicit, we can better understand how and why viewpoints diverge—even when everyone is acting in good faith. This is an educational exploration of Bayesian reasoning, not a verdict predictor.</div>
+  </section>
+
   <main>
     <section class="content-box">
       <h1>Bayesian Analysis of the Karen Read Case</h1>
@@ -425,13 +438,46 @@
       <p>Adjust how strongly the evidence supports each scenario. The sliders let you weigh different pieces of evidence:</p>
       
       <div class="weight-explanation" style="background: #f8f9fa; padding: 10px 15px; border-radius: 5px; margin-bottom: 20px;">
-        <p><strong>How to interpret the weights:</strong></p>
+        <p><strong>How to interpret the weights:</strong> <span title="0–1× = Weak, 5–7× = Strong, 10× = Conclusive" style="cursor: help; color: #2c5aa8; font-size:1.1em;">&#9432;</span></p>
         <ul style="margin-top: 5px; padding-left: 20px;">
-          <li><strong>0×</strong> means "no evidence supports this scenario"</li>
-          <li><strong>10×</strong> means "all evidence strongly supports this scenario"</li>
+          <li><strong>0–1×</strong>: Weak evidence</li>
+          <li><strong>5–7×</strong>: Strong evidence</li>
+          <li><strong>10×</strong>: Very strong/conclusive</li>
           <li>Values in between represent varying degrees of support</li>
         </ul>
       </div>
+      <div class="callout-info" style="background: #e3f2fd; border-left: 5px solid #2196f3; padding: 12px 18px; border-radius: 6px; margin-bottom: 18px;">
+        <span style="font-size:1.2em; margin-right:8px;">💡</span>
+        <strong>Tip:</strong> Play with the sliders and priors to see how your beliefs change! Bayesian reasoning is about making your assumptions explicit and seeing how conclusions shift.
+      </div>
+      <div class="flowchart-box" style="background: #fafafa; border: 1px solid #bdbdbd; border-radius: 7px; padding: 12px 18px; margin-bottom: 20px; text-align: center;">
+        <strong>How Bayesian Updating Works:</strong><br>
+        <svg width="360" height="64" viewBox="0 0 360 64" style="vertical-align: middle;">
+          <rect x="8" y="16" width="90" height="32" rx="8" fill="#e3f2fd" stroke="#2196f3"/>
+          <text x="53" y="36" text-anchor="middle" font-size="15" fill="#1565c0">Prior</text>
+          <polygon points="98,32 118,32 118,28 138,32 118,36 118,32" fill="#90caf9"/>
+          <rect x="138" y="16" width="90" height="32" rx="8" fill="#fff3e0" stroke="#ffb300"/>
+          <text x="183" y="36" text-anchor="middle" font-size="15" fill="#e65100">Evidence</text>
+          <polygon points="228,32 248,32 248,28 268,32 248,36 248,32" fill="#ffe082"/>
+          <rect x="268" y="16" width="90" height="32" rx="8" fill="#e8f5e9" stroke="#43a047"/>
+          <text x="313" y="36" text-anchor="middle" font-size="15" fill="#2e7d32">Posterior</text>
+        </svg>
+        <div style="font-size:0.98em; color:#555; margin-top:6px;">Start with a prior belief → update with evidence → get a new belief (posterior)</div>
+      </div>
+      <details style="margin-bottom: 18px;">
+        <summary style="font-weight: bold; cursor: pointer;">Show an Example: Numeric Walkthrough</summary>
+        <div style="padding:12px 0 0 0;">
+          <strong>Example:</strong> Suppose your prior for H1 is 20%, and you rate a piece of evidence as 80% likely if H1 is true, and 40% likely if H2 is true.<br>
+          <ul>
+            <li>Prior odds for H1:H2 = 20:80 = 0.25</li>
+            <li>Likelihood ratio = 80/40 = 2</li>
+            <li>Posterior odds = 0.25 × 2 = 0.5</li>
+            <li>Posterior probability for H1 = 0.5 / (0.5 + 1) = 33%</li>
+          </ul>
+          <span style="font-size:0.98em; color:#555;">This is how a single piece of evidence updates your belief!</span>
+        </div>
+      </details>
+
 
       <form id="weightsForm" style="margin: 20px 0;">
         <div class="weight-slider" style="margin-bottom: 20px;">
@@ -545,7 +591,10 @@
 
   <footer>
     <p>For educational reference only. Not affiliated with the court or any party.</p>
+    <p style="margin-top:16px;"><a href="bayesian_analyzer.html" style="color:#2c5aa8; font-weight:600;">Bayes: 2H Analysis &rarr;</a></p>
   </footer>
+
+
 
   <script>
     // Weights for evidence (will be updated by sliders)
